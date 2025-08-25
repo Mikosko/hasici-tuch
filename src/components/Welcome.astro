@@ -25,7 +25,7 @@ import "../styles/global.css";
   <div
     class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
   >
-    <div class="container grid grid-cols-2">
+    <div class="container grid lg:grid-cols-2">
       <div class="flex flex-row gap-4">
         <img src={LogoImg.src} class="w-20" />
         <h1
@@ -37,7 +37,9 @@ import "../styles/global.css";
           >
         </h1>
       </div>
-      <div class="flex flex-row justify-end items-center">
+      <div
+        class="flex flex-row justify-center lg:justify-end items-center min-h-15"
+      >
         <ul class="list-none m-0 p-0 flex flex-row gap-8 text-gray-800">
           <li class="p-0 m-0">
             <a
@@ -86,7 +88,9 @@ import "../styles/global.css";
       class="container mx-auto max-w-250 text-center items-center justify-center flex flex-col"
     >
       <img src={LogoImg.src} class="w-50 mb-4" />
-      <h2 class="flex flex-col justify-center text-white font-bold text-3xl mb-8">
+      <h2
+        class="flex flex-col justify-center text-white font-bold text-3xl mb-8"
+      >
         Hasiči Tuchořice
       </h2>
       <h1
@@ -120,17 +124,17 @@ import "../styles/global.css";
   class="w-full bg-gray-100 px-4 py-20 flex items-center relative flex-col border-t border-black/50"
 >
   <div class="container">
-    <div class="grid grid-cols-2 gap-8 items-end">
+    <div class="grid grid-cols-1 gap-8 xl:items-end md:grid-cols-2">
       <div>
-        <h2 class="text-gray-800 font-bold text-5xl mb-8 text-balance">
+        <h2 class="text-gray-800 font-bold text-5xl mb-8 md:text-balance">
           <span class="text-red-800">S hrdostí a odhodláním</span> pomáhame občanům
         </h2>
-        <p class="text-balance mb-6 text-lg text-gray-800">
+        <p class="md:text-balance mb-6 text-lg text-gray-800">
           Náš sbor dobrovolných hasičů je už více než dvě desetiletí oporou při
           mimořádných událostech v naší obci. Jsme obyčejní lidé, kteří přijali
           mimořádné poslání – chránit a pomáhat svým sousedům.
         </p>
-        <p class="text-balance mb-6 text-lg text-gray-800">
+        <p class="md:text-balance mb-6 text-lg text-gray-800">
           Od hašení požárů a záchranných zásahů až po osvětu a preventivní
           programy se naši členové pravidelně školí, aby byli vždy připraveni,
           když povinnost zavolá.
@@ -236,7 +240,7 @@ import "../styles/global.css";
         komunity prostřednictvím školení, vzdělávání a osvětových programů.
       </p>
     </section>
-    <div class="grid gap-8 grid-cols-3 w-full">
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 w-full">
       {
         [1, 2, 3, 4, 5, 6].map((i) => (
           <div class="border-gray-200 border-1 bg-gray-100 shadow-sm rounded-xl group cursor-pointer">
@@ -281,7 +285,7 @@ import "../styles/global.css";
           vám pomohli.
         </p>
       </section>
-      <div class="grid gap-8 grid-cols-3 w-full">
+      <div class="grid gap-8 w-full sm:grid-cols-2 md:grid-cols-3">
         <div
           class="border-red-900 border-1 bg-red-800 shadow-sm rounded-xl text-white p-6"
         >
@@ -366,7 +370,7 @@ import "../styles/global.css";
     class="w-full bg-gray-900 px-4 py-15 flex items-center flex-col text-white border-t border-t-zinc-700"
   >
     <div class="container">
-      <div class="grid grid-cols-3 mb-6">
+      <div class="grid sm:grid-cols-2 gap-8 md:grid-cols-3 mb-6 ">
         <div class="mb-6">
           <h5 class="text-orange-600 font-bold text-xl mb-4">SDH Tuchořice</h5>
           <ul class="list-none m-0 p-0 flex flex-col gap-2">
@@ -452,7 +456,7 @@ import "../styles/global.css";
         <span class="text-zinc-200 font-light text-sm">
           © 2026 Sbor dobrovolných hasičů Tuchořice. Všechna práva vyhrazena.<br
           />
-          <strong class="font-semibold flex items-center justify-center gap-2">
+          <strong class="font-semibold flex items-center justify-center gap-2 ">
             <HeartIcon class="text-red-900 fill-red-700" />S hrdostí sloužíme
             naší komunitě od roku 2003
           </strong>
