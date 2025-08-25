@@ -1,210 +1,477 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import CallIcon from "../assets/call-02-stroke-rounded.svg";
+import StationIcon from "../assets/house-01-stroke-rounded.svg";
+import ArrowIcon from "../assets/arrow-down-double-stroke-rounded.svg";
+import TeamIcon from "../assets/user-group-stroke-rounded.svg";
+import HeartIcon from "../assets/favourite-stroke-rounded.svg";
+import FacebookIcon from "../assets/facebook-02-stroke-rounded.svg";
+import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
+import MailIcon from "../assets/mail-01-stroke-rounded.svg";
+import LocationIcon from "../assets/location-03-stroke-rounded.svg";
+import PlaceholderIcon from "../assets/image-02-stroke-rounded.svg";
+import FireIcon from "../assets/fire-stroke-rounded.svg";
+import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
+import BulbIcon from "../assets/bulb-stroke-rounded.svg";
+import BookIcon from "../assets/book-02-stroke-rounded.svg";
+import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+import Bg3Img from "../assets/530260744_1173567348150322_1018248472722609602_n.jpg";
+import LogoImg from "../assets/logo-no-text.png";
+
+import "../styles/global.css";
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<div class="fixed z-50 t-0 l-0 w-full">
+  <div
+    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
+  >
+    <div class="container grid grid-cols-2">
+      <div class="flex flex-row gap-4">
+        <img src={LogoImg.src} class="w-20" />
+        <h1
+          class="flex flex-col justify-center text-red-800 font-bold text-3xl"
+        >
+          Hasiči Tuchořice
+          <small class="text-gray-800 text-sm font-medium"
+            >Pohotovostní služba</small
+          >
+        </h1>
+      </div>
+      <div class="flex flex-row justify-end items-center">
+        <ul class="list-none m-0 p-0 flex flex-row gap-8 text-gray-800">
+          <li class="p-0 m-0">
+            <a
+              class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 transition-colors group"
+              >O nás</a
+            >
+          </li>
+          <li class="p-0 m-0">
+            <a
+              class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 transition-colors group"
+              >Akce</a
+            >
+          </li>
+          <li class="p-0 m-0">
+            <a
+              class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 transition-colors group"
+              >Naše historie</a
+            >
+          </li>
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
+          <li class="p-0 m-0">
+            <a
+              class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 transition-colors group"
+              >Technika</a
+            >
+          </li>
+          <li class="p-0 m-0">
+            <a
+              class="cursor-pointer text-nowrap font-semibold text-white transition-colors group bg-orange-600 px-6 py-2 rounded-2xl"
+              >Přidej se k nám</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+<div class="w-full min-h-screen">
+  <img class="object-cover h-full w-full absolute" src={Bg3Img.src} />
+  <div class="h-full w-full absolute bg-black/50"></div>
+  <div
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center"
+  >
+    <div
+      class="container mx-auto max-w-250 text-center items-center justify-center flex flex-col"
+    >
+      <img src={LogoImg.src} class="w-50 mb-4" />
+      <h2 class="flex flex-col justify-center text-white font-bold text-3xl mb-8">
+        Hasiči Tuchořice
+      </h2>
+      <h1
+        class="text-balance text-7xl font-extrabold text-white mb-6 text-shadow-xs"
+      >
+        Chránime vaše životy, <span
+          class="bg-gradient-to-l from-orange-600 to-orange-700 text-transparent bg-clip-text"
+        >
+          zdraví a majetek</span
+        >
+      </h1>
+      <p
+        class="text-balance text-2xl text-white font-light text-shadow-xs tracking-wide italic"
+      >
+        "Oddaní dobrovolní hasiči sloužící s odvahou, soucitem a odhodláním od
+        prvního dne."
+      </p>
+    </div>
+  </div>
+  <div class="absolute bottom-0 w-full flex flex-col items-center">
+    <div class="container">
+      <div class="p-6 flex items-center flex-col w-full">
+        <!-- <span class="font-semibold text-black mb-6">Prejdite nadol</span> -->
+        <ArrowIcon class="text-white w-8 h-8 animate-bounce" />
+      </div>
+    </div>
+  </div>
+</div>
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+<div
+  class="w-full bg-gray-100 px-4 py-20 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+    <div class="grid grid-cols-2 gap-8 items-end">
+      <div>
+        <h2 class="text-gray-800 font-bold text-5xl mb-8 text-balance">
+          <span class="text-red-800">S hrdostí a odhodláním</span> pomáhame občanům
+        </h2>
+        <p class="text-balance mb-6 text-lg text-gray-800">
+          Náš sbor dobrovolných hasičů je už více než dvě desetiletí oporou při
+          mimořádných událostech v naší obci. Jsme obyčejní lidé, kteří přijali
+          mimořádné poslání – chránit a pomáhat svým sousedům.
+        </p>
+        <p class="text-balance mb-6 text-lg text-gray-800">
+          Od hašení požárů a záchranných zásahů až po osvětu a preventivní
+          programy se naši členové pravidelně školí, aby byli vždy připraveni,
+          když povinnost zavolá.
+        </p>
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+        <div class="grid grid-cols-2 gap-8">
+          <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
+          >
+            <strong class="text-red-800 text-3xl">25+</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Aktivních dobrovolníků</span
+            >
+          </div>
+          <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
+          >
+            <strong class="text-red-800 text-3xl">70+</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Tísňových výjezdů ročně</span
+            >
+          </div>
+          <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
+          >
+            <strong class="text-red-800 text-3xl">23</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Let pomoci komunitě</span
+            >
+          </div>
+          <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
+          >
+            <strong class="text-red-800 text-3xl">5000+</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Občanů, kterým jsme pomohli</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-6 flex-col">
+        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
+            <FireIcon class="text-red-800" /> Zásahová činnost
+          </h5>
+          <p class="text-gray-800 text-sm font-semibold">
+            Jsme připraveni 24/7 k výjezdům – od hašení požárů přes záchranné
+            práce až po poskytování první pomoci v celém našem zásahovém obvodu.
+          </p>
+        </div>
+        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
+            <BookIcon class="text-red-800" />Výcvik dobrovolníků
+          </h5>
+          <p class="text-gray-800 text-sm font-semibold">
+            Naši členové se neustále školí a získávají nové certifikace, abychom
+            vždy udrželi nejvyšší standard bezpečnosti a efektivity.
+          </p>
+        </div>
+        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
+            <BulbIcon class="text-red-800" />Osvěta a prevence
+          </h5>
+          <p class="text-gray-800 text-sm font-semibold">
+            Pořádáme programy požární ochrany, navštěvujeme školy a vedeme
+            kampaně, které mají za cíl předcházet mimořádným událostem dříve,
+            než nastanou.
+          </p>
+        </div>
+        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
+            <HandShakeIcon class="text-red-800" />Spolupráce s obcí a okolím
+          </h5>
+          <p class="text-gray-800 text-sm font-semibold">
+            Úzce spolupracujeme se sousedními obcemi, spolky a organizacemi.
+            Podílíme se na kulturních a společenských akcích a jsme vždy tam,
+            kde je potřeba pomoc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-20"
+    style="
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+<!-- A -->
+<div
+  class="w-full px-4 py-20 flex items-center flex-col relative border-t border-gray-200"
+>
+  <div class="container">
+    <section class="mx-auto text-center mb-16">
+      <h3 class="text-gray-800 font-bold text-4xl mb-8">
+        Naše akce a aktivity
+      </h3>
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+      <p class="text-balance text-gray-500 text-xl mx-auto w-[85%]">
+        Objevte, jak naši dobrovolní hasiči aktivně slouží a zapojují se do
+        komunity prostřednictvím školení, vzdělávání a osvětových programů.
+      </p>
+    </section>
+    <div class="grid gap-8 grid-cols-3 w-full">
+      {
+        [1, 2, 3, 4, 5, 6].map((i) => (
+          <div class="border-gray-200 border-1 bg-gray-100 shadow-sm rounded-xl group cursor-pointer">
+            <div class="mx-auto flex flex-col">
+              <div class="bg-gray-200 w-full min-h-[200px] max-h-[200px] overflow-hidden rounded-t-xl relative">
+                <span class="absolute top-3 z-20 text-white left-3 bg-gradient-to-l from-orange-600 to-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  Trenink
+                </span>
+                <img
+                  class="w-full relative z-10 transition-transform duration-300 transform group-hover:scale-110"
+                  src={`https://picsum.photos/seed/${i}/400/200`}
+                />
+                <PlaceholderIcon class="text-gray-300 w-12 h-12 absolute inset-0 m-auto" />
+              </div>
+              <div class="p-6 prose">
+                <h4 class="text-gray-800 text-xl group-hover:text-red-800">
+                  Tréninkové cvičení
+                </h4>
+                <small class="text-sm">Březen 4, 2025</small>
+                <p class="text-gray-800 font-light mt-1 leading-normal">
+                  Měsíční školení zaměřené na pokročilé záchranné techniky a
+                  práci s vybavením
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+<!-- B -->
+<div class="relative overflow-hidden">
+  <div class="w-full bg-gray-800 px-4 py-20 flex items-center flex-col">
+    <div class="container">
+      <section class="mx-auto text-center mb-16">
+        <h3 class="text-white font-bold text-4xl mb-8">Kontaktujte nás</h3>
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+        <p class="text-balance text-zinc-50 text-xl w-[85%] mx-auto">
+          Ať už potřebujete pohotovostní pomoc, chcete se přihlásit jako
+          dobrovolník, nebo máte otázky ohledně našich služeb, jsme tu, abychom
+          vám pomohli.
+        </p>
+      </section>
+      <div class="grid gap-8 grid-cols-3 w-full">
+        <div
+          class="border-red-900 border-1 bg-red-800 shadow-sm rounded-xl text-white p-6"
+        >
+          <div
+            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+          >
+            <div
+              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+            >
+              <CallIcon class="w-12 h-12 m-0 text-red-800" />
+            </div>
+            <h4 class="text-white mt-6">Pohotovost</h4>
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+            <p class="text-zinc-50 font-light leading-normal">
+              V případě požáru, zdravotní nebo záchranné nouze
+            </p>
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+            <a
+              href="tel:+420725700074"
+              class="cursor-pointer no-underline rounded-xl bg-white text-red-900 font-bold text-xl px-8 py-2 text-center"
+            >
+              Volej 150
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-neutral-600 border-1 bg-neutral-800 shadow-sm rounded-xl text-white p-6"
+        >
+          <div
+            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+          >
+            <div
+              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+            >
+              <StationIcon class="w-12 h-12 m-0 text-neutral-800" />
+            </div>
+            <h4 class="text-white mt-6">Hasičská stanice</h4>
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+            <p class="text-zinc-50 font-light leading-normal">
+              Tuchořice 30 43969,<br />
+              Česká Republika
+            </p>
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+            <a
+              href="tel:+420725700074"
+              class="cursor-pointer no-underline rounded-xl bg-white text-neutral-800 font-bold text-xl px-8 py-2 text-center"
+            >
+              +420 725 700 074
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-orange-700 border-1 bg-orange-600 shadow-sm rounded-xl text-white p-6"
+        >
+          <div
+            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+          >
+            <div
+              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+            >
+              <TeamIcon class="w-12 h-12 m-0 text-orange-600" />
+            </div>
+            <h4 class="text-white mt-6">Dobrovolník</h4>
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+            <p class="text-zinc-50 font-light leading-normal">
+              Přidej se k našemu týmu a udělej změnu a pomoz měnit věci k
+              lepšímu
+            </p>
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+            <button
+              class="cursor-pointer rounded-xl bg-white text-orange-600 font-bold text-xl px-8 py-2 text-center"
+            >
+              Zjisti více
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+  <footer
+    class="w-full bg-gray-900 px-4 py-15 flex items-center flex-col text-white border-t border-t-zinc-700"
+  >
+    <div class="container">
+      <div class="grid grid-cols-3 mb-6">
+        <div class="mb-6">
+          <h5 class="text-orange-600 font-bold text-xl mb-4">SDH Tuchořice</h5>
+          <ul class="list-none m-0 p-0 flex flex-col gap-2">
+            <li
+              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm"
+            >
+              <LocationIcon class="text-zinc-200 w-4.5" /> Tuchořice 30 43969, Česká
+              Republika
+            </li>
+            <li
+              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
+            >
+              <CallIcon class="text-zinc-200 w-4.5" /> Tísňové volání: 150 nebo 112
+              | Stanice: +420 725 700 074
+            </li>
+            <li
+              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
+            >
+              <MailIcon class="text-zinc-200 w-4.5" /> hasicituchorice@post.cz
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-orange-600 font-bold text-xl mb-4">Rychlé odkazy</h5>
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+          <ul class="list-none m-0 p-0 flex flex-col gap-2 text-zinc-200">
+            <li class="p-0 m-0">
+              <a
+                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+                >O nás</a
+              >
+            </li>
+            <li class="p-0 m-0">
+              <a
+                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+                >Akce</a
+              >
+            </li>
+            <li class="p-0 m-0">
+              <a
+                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+                >Naše historie</a
+              >
+            </li>
+            <li class="p-0 m-0">
+              <a
+                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+                >Přidej se k nám</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-orange-600 font-bold text-xl mb-4">
+            Buďte s nami v obraze
+          </h5>
+          <ul class="list-none m-0 p-0 flex flex-row gap-4 mb-4">
+            <li class="p-0 m-0">
+              <a
+                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
+                ><FacebookIcon
+                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
+                /></a
+              >
+            </li>
+            <li class="p-0 m-0">
+              <a
+                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
+                ><YoutubeIcon
+                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
+                /></a
+              >
+            </li>
+          </ul>
+          <p class="text-zinc-200 font-light leading-normal text-sm">
+            Zůstaňte ve spojení pro nouzové informace, oznámení o akcích a
+            novinky z komunity.
+          </p>
+        </div>
+      </div>
+      <div class="text-center">
+        <hr class="w-full mb-6 border-neutral-600" />
+        <span class="text-zinc-200 font-light text-sm">
+          © 2026 Sbor dobrovolných hasičů Tuchořice. Všechna práva vyhrazena.<br
+          />
+          <strong class="font-semibold flex items-center justify-center gap-2">
+            <HeartIcon class="text-red-900 fill-red-700" />S hrdostí sloužíme
+            naší komunitě od roku 2003
+          </strong>
+        </span>
+      </div>
+    </div>
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+    <img
+      src={BgImg.src}
+      class="select-none"
+      style="position: absolute;
+    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    top:0;
+    mix-blend-mode: lighten;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    opacity: 30%;
+}"
+    />
+  </footer>
+</div>
