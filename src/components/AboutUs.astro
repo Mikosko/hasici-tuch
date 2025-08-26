@@ -1,23 +1,18 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
-import Bg3Img from "../assets/image 4.jpg";
-import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
-import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
-import BookIcon from "../assets/book-02-stroke-rounded.svg";
-import BulbIcon from "../assets/bulb-stroke-rounded.svg";
+import BookIcon from "../assets/body-part-muscle-stroke-rounded.svg";
 import CallIcon from "../assets/call-02-stroke-rounded.svg";
 import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import FacebookIcon from "../assets/facebook-02-stroke-rounded.svg";
-import HeartIcon from "../assets/favourite-stroke-rounded.svg";
-import FireIcon from "../assets/fire-stroke-rounded.svg";
-import StationIcon from "../assets/house-01-stroke-rounded.svg";
-import LocationIcon from "../assets/location-03-stroke-rounded.svg";
+import HandShakeIcon from "../assets/city-03-stroke-rounded.svg";
+import StationIcon from "../assets/garage-stroke-rounded.svg";
+import Bg3Img from "../assets/image 4.jpg";
+import KidIcon from "../assets/kid-stroke-rounded.svg";
 import LogoImg from "../assets/logo-no-text.png";
-import MailIcon from "../assets/mail-01-stroke-rounded.svg";
 import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
+import PartyIcon from "../assets/party-stroke-rounded.svg";
 import TeamIcon from "../assets/user-group-stroke-rounded.svg";
-import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
 import "../styles/global.css";
+import Footer from "./Footer.astro";
 import Navigation from "./Navigation.astro";
 ---
 
@@ -68,9 +63,7 @@ import Navigation from "./Navigation.astro";
 
   <div class="absolute bottom-0 left-0 transform w-full flex flex-col">
     <div class="container mx-auto p-4">
-      <h1 class="text-gray-100 font-bold text-7xl md:text-balance">
-        O nás
-      </h1>
+      <h1 class="text-gray-100 font-bold text-7xl md:text-balance">O nás</h1>
     </div>
   </div>
 </div>
@@ -80,90 +73,73 @@ import Navigation from "./Navigation.astro";
 >
   <div class="container">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-      <div>
-        <p class="md:text-balance mb-6 text-lg text-gray-800">
-          Náš sbor dobrovolných hasičů je už více než dvě desetiletí oporou při
-          mimořádných událostech v naší obci. Jsme obyčejní lidé, kteří přijali
-          mimořádné poslání – chránit a pomáhat svým sousedům.
-        </p>
-        <p class="md:text-balance mb-6 text-lg text-gray-800">
-          Od hašení požárů a záchranných zásahů až po osvětu a preventivní
-          programy se naši členové pravidelně školí, aby byli vždy připraveni,
-          když povinnost zavolá.
+      <div class="">
+        <p class="md:text-balance mb-6 text-lg font-medium text-gray-800">
+          <strong>Sbor dobrovolných hasičů Tuchořice</strong> je tým lidí, kteří
+          se rozhodli věnovat svůj čas, energii a odhodlání pro dobro ostatních.
+          Naši členové nejsou profesionály v zaměstnání, ale <em
+            >srdcem a přístupem</em
+          > k práci se jim vyrovnají. Každý zásah je pro nás <strong
+            >výzvou</strong
+          >, při které musíme být rychlí, odvážní a spolehliví.
         </p>
 
-        <div class="grid grid-cols-2 gap-8">
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">25+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Aktivních dobrovolníků</span
-            >
-          </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">70+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Tísňových výjezdů ročně</span
-            >
-          </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">23</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Let pomoci komunitě</span
-            >
-          </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">5000+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Občanů, kterým jsme pomohli</span
-            >
-          </div>
-        </div>
+        <p class="md:text-balance mb-6 text-lg font-medium text-gray-800">
+          <u>Naše činnost</u> není jen o výjezdech k požárům či povodním. Důležitou
+          součástí naší práce je také <strong
+            >preventivní činnost a tréninky</strong
+          >, kde zdokonalujeme své schopnosti. Zároveň jsme <em
+            >pevnou součástí společenského života obce</em
+          > – organizujeme tradiční akce jako
+          <strong
+            >Šlapka Bédy Keila, staročeské máje, stavění máje, vepřové hody či
+            hasičský ples</strong
+          >. Spolupracujeme s dalšími spolky v obci a každoročně děláme radost
+          dětem při oslavách Dne dětí, kde ukazujeme naši techniku a
+          připravujeme oblíbenou <strong>pěnovou show</strong>.
+        </p>
+
+        <p class="md:text-balance mb-6 text-lg font-medium text-gray-800">
+          <strong>Být dobrovolným hasičem v Tuchořicích</strong> znamená nejen pomáhat
+          v čase nouze, ale také <em>tvořit komunitu</em>, ve které se lidé
+          mohou na sebe spolehnout.
+        </p>
       </div>
       <div class="flex gap-6 flex-col">
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <FireIcon class="text-red-800" /> Zásahová činnost
+            <BookIcon class="text-red-800" />Trénink a dovednosti
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Jsme připraveni 24/7 k výjezdům – od hašení požárů přes záchranné
-            práce až po poskytování první pomoci v celém našem zásahovém obvodu.
+            Na pravidelných cvičeních zdokonalujeme své schopnosti, abychom byli
+            vždy připraveni.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BookIcon class="text-red-800" />Výcvik dobrovolníků
+            <PartyIcon class="text-red-800" />Tradice a slavnosti
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Naši členové se neustále školí a získávají nové certifikace, abychom
-            vždy udrželi nejvyšší standard bezpečnosti a efektivity.
+            sme pevnou součástí společenského života obce – pořádáme máje, hody,
+            plesy i další tradiční akce.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BulbIcon class="text-red-800" />Osvěta a prevence
+            <KidIcon class="text-red-800" />Radost a programy pro děti
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Pořádáme programy požární ochrany, navštěvujeme školy a vedeme
-            kampaně, které mají za cíl předcházet mimořádným událostem dříve,
-            než nastanou.
+            Dětem přinášíme radost při Dni dětí, ukazujeme techniku a
+            připravujeme oblíbenou pěnovou show.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <HandShakeIcon class="text-red-800" />Spolupráce s obcí a okolím
+            <HandShakeIcon class="text-red-800" />Komunita a soudržnost
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Úzce spolupracujeme se sousedními obcemi, spolky a organizacemi.
-            Podílíme se na kulturních a společenských akcích a jsme vždy tam,
-            kde je potřeba pomoc.
+            Být hasičem znamená nejen pomáhat v nouzi, ale i tvořit komunitu, ve
+            které se lidé mohou spolehnout jeden na druhého.
           </p>
         </div>
       </div>
@@ -173,6 +149,7 @@ import Navigation from "./Navigation.astro";
     src={Bg2Img.src}
     class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-20"
     style="
+    object-fit: cover;
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
     "
   />
@@ -272,116 +249,5 @@ import Navigation from "./Navigation.astro";
     </div>
   </div>
 
-  <footer
-    class="w-full bg-gray-900 px-4 py-15 flex items-center flex-col text-white border-t border-t-zinc-700"
-  >
-    <div class="container">
-      <div class="grid sm:grid-cols-2 gap-8 md:grid-cols-3 mb-6">
-        <div class="mb-6">
-          <h5 class="text-orange-600 font-bold text-xl mb-4">SDH Tuchořice</h5>
-          <ul class="list-none m-0 p-0 flex flex-col gap-2">
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm"
-            >
-              <LocationIcon class="text-zinc-200 w-4.5" /> Tuchořice 30 43969, Česká
-              Republika
-            </li>
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
-            >
-              <CallIcon class="text-zinc-200 w-4.5" /> Tísňové volání: 150 nebo 112
-              | Stanice: +420 725 700 074
-            </li>
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
-            >
-              <MailIcon class="text-zinc-200 w-4.5" /> hasicituchorice@post.cz
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-orange-600 font-bold text-xl mb-4">Rychlé odkazy</h5>
-
-          <ul class="list-none m-0 p-0 flex flex-col gap-2 text-zinc-200">
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >O nás</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Akce</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Naše historie</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Přidej se k nám</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-orange-600 font-bold text-xl mb-4">
-            Buďte s nami v obraze
-          </h5>
-          <ul class="list-none m-0 p-0 flex flex-row gap-4 mb-4">
-            <li class="p-0 m-0">
-              <a
-                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
-                ><FacebookIcon
-                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
-                /></a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
-                ><YoutubeIcon
-                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
-                /></a
-              >
-            </li>
-          </ul>
-          <p class="text-zinc-200 font-light leading-normal text-sm">
-            Zůstaňte ve spojení pro nouzové informace, oznámení o akcích a
-            novinky z komunity.
-          </p>
-        </div>
-      </div>
-      <div class="text-center">
-        <hr class="w-full mb-6 border-neutral-600" />
-        <span class="text-zinc-200 font-light text-sm">
-          © 2026 Sbor dobrovolných hasičů Tuchořice. Všechna práva vyhrazena.<br
-          />
-          <strong class="font-semibold flex items-center justify-center gap-2">
-            <HeartIcon class="text-red-900 fill-red-700" />S hrdostí sloužíme
-            naší komunitě od roku 2003
-          </strong>
-        </span>
-      </div>
-    </div>
-
-    <img
-      src={BgImg.src}
-      class="select-none"
-      style="position: absolute;
-    pointer-events: none;
-    right: 0;
-    bottom: 0;
-    top:0;
-    mix-blend-mode: lighten;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
-    opacity: 30%;
-}"
-    />
-  </footer>
+  <Footer />
 </div>

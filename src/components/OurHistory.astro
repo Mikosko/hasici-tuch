@@ -1,23 +1,18 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
 import Bg3Img from "../assets/486757443_1065184745655250_1096351467003267294_n.jpg";
-import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
 import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
 import BookIcon from "../assets/book-02-stroke-rounded.svg";
 import BulbIcon from "../assets/bulb-stroke-rounded.svg";
 import CallIcon from "../assets/call-02-stroke-rounded.svg";
 import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import FacebookIcon from "../assets/facebook-02-stroke-rounded.svg";
-import HeartIcon from "../assets/favourite-stroke-rounded.svg";
 import FireIcon from "../assets/fire-stroke-rounded.svg";
 import StationIcon from "../assets/house-01-stroke-rounded.svg";
-import LocationIcon from "../assets/location-03-stroke-rounded.svg";
 import LogoImg from "../assets/logo-no-text.png";
-import MailIcon from "../assets/mail-01-stroke-rounded.svg";
 import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
 import TeamIcon from "../assets/user-group-stroke-rounded.svg";
-import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
 import "../styles/global.css";
+import Footer from "./Footer.astro";
 import Navigation from "./Navigation.astro";
 ---
 
@@ -63,7 +58,10 @@ import Navigation from "./Navigation.astro";
 </div>
 
 <div class="w-full max-h-90 h-90 relative">
-  <img class="object-cover h-full w-full absolute mix-blend-luminosity" src={Bg3Img.src} />
+  <img
+    class="object-cover h-full w-full absolute mix-blend-luminosity"
+    src={Bg3Img.src}
+  />
   <div class="h-full w-full absolute bg-black/50"></div>
 
   <div class="absolute bottom-0 left-0 transform w-full flex flex-col">
@@ -271,117 +269,5 @@ import Navigation from "./Navigation.astro";
       </div>
     </div>
   </div>
-
-  <footer
-    class="w-full bg-gray-900 px-4 py-15 flex items-center flex-col text-white border-t border-t-zinc-700"
-  >
-    <div class="container">
-      <div class="grid sm:grid-cols-2 gap-8 md:grid-cols-3 mb-6">
-        <div class="mb-6">
-          <h5 class="text-orange-600 font-bold text-xl mb-4">SDH Tuchořice</h5>
-          <ul class="list-none m-0 p-0 flex flex-col gap-2">
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm"
-            >
-              <LocationIcon class="text-zinc-200 w-4.5" /> Tuchořice 30 43969, Česká
-              Republika
-            </li>
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
-            >
-              <CallIcon class="text-zinc-200 w-4.5" /> Tísňové volání: 150 nebo 112
-              | Stanice: +420 725 700 074
-            </li>
-            <li
-              class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-center text-sm text-wrap"
-            >
-              <MailIcon class="text-zinc-200 w-4.5" /> hasicituchorice@post.cz
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-orange-600 font-bold text-xl mb-4">Rychlé odkazy</h5>
-
-          <ul class="list-none m-0 p-0 flex flex-col gap-2 text-zinc-200">
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >O nás</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Akce</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Naše historie</a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-                >Přidej se k nám</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-orange-600 font-bold text-xl mb-4">
-            Buďte s nami v obraze
-          </h5>
-          <ul class="list-none m-0 p-0 flex flex-row gap-4 mb-4">
-            <li class="p-0 m-0">
-              <a
-                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
-                ><FacebookIcon
-                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
-                /></a
-              >
-            </li>
-            <li class="p-0 m-0">
-              <a
-                class="shadow-sm flex items-center w-10 justify-center rounded-full cursor-pointer hover:bg-orange-600 transition-colors group p-2 aspect-square"
-                ><YoutubeIcon
-                  class="text-zinc-200 group-hover:text-gray-900 transition-colors"
-                /></a
-              >
-            </li>
-          </ul>
-          <p class="text-zinc-200 font-light leading-normal text-sm">
-            Zůstaňte ve spojení pro nouzové informace, oznámení o akcích a
-            novinky z komunity.
-          </p>
-        </div>
-      </div>
-      <div class="text-center">
-        <hr class="w-full mb-6 border-neutral-600" />
-        <span class="text-zinc-200 font-light text-sm">
-          © 2026 Sbor dobrovolných hasičů Tuchořice. Všechna práva vyhrazena.<br
-          />
-          <strong class="font-semibold flex items-center justify-center gap-2">
-            <HeartIcon class="text-red-900 fill-red-700" />S hrdostí sloužíme
-            naší komunitě od roku 2003
-          </strong>
-        </span>
-      </div>
-    </div>
-
-    <img
-      src={BgImg.src}
-      class="select-none"
-      style="position: absolute;
-    pointer-events: none;
-    right: 0;
-    bottom: 0;
-    top:0;
-    mix-blend-mode: lighten;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
-    opacity: 30%;
-}"
-    />
-  </footer>
+  <Footer />
 </div>
