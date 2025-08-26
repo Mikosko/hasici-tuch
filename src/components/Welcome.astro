@@ -17,9 +17,10 @@ import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
 import Bg3Img from "../assets/530260744_1173567348150322_1018248472722609602_n.jpg";
 import LogoImg from "../assets/logo-no-text.png";
-
+import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
 import "../styles/global.css";
 import Navigation from "./Navigation.astro";
+import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
 ---
 
 <div class="fixed z-50 t-0 l-0 w-full">
@@ -27,17 +28,37 @@ import Navigation from "./Navigation.astro";
     class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
   >
     <div class="container grid lg:grid-cols-2">
-      <div class="flex flex-row gap-4">
-        <img src={LogoImg.src} class="w-20" />
-        <h1
-          class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-        >
-          Hasiči Tuchořice
-          <small class="text-gray-800 text-sm font-medium"
-            >Pohotovostní služba</small
+      <div
+        class="flex justify-between items-center md:justify-center lg:justify-start"
+      >
+        <div class="flex flex-row gap-4">
+          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
+          <h1
+            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
           >
-        </h1>
+            Hasiči Tuchořice
+            <small class="text-gray-800 text-sm font-medium"
+              >Pohotovostní služba</small
+            >
+          </h1>
+        </div>
+
+        <div class="md:hidden sm:block">
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
+          >
+            <MenuIcon
+              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
+            />
+            <CloseIcon
+              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
+            />
+          </button>
+        </div>
       </div>
+
       <Navigation />
     </div>
   </div>
