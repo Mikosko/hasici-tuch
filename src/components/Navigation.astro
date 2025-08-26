@@ -1,0 +1,71 @@
+---
+import HomeIcon from "../assets/home-01-stroke-rounded.svg";
+const { pathname } = Astro.url;
+---
+
+<div
+  id="navigation"
+  class="md:flex flex-row justify-center hidden lg:justify-end items-center min-h-15"
+>
+  <ul
+    class="list-none sm:py-0 m-0 p-0 py-6 pt-8 flex flex-col sm:flex-row gap-8 text-gray-800"
+  >
+    <li class="p-0 m-0">
+      <a
+        href="/"
+        aria-current={pathname.slice(1) === "" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >Domov</a
+      >
+    </li>
+    <li class="p-0 m-0">
+      <a
+        href="/o-nas"
+        aria-current={pathname.slice(1) === "o-nas" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >O nás</a
+      >
+    </li>
+    <li class="p-0 m-0">
+      <a
+        href="/akce"
+        aria-current={pathname.slice(1) === "akce" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >Akce</a
+      >
+    </li>
+    <li class="p-0 m-0">
+      <a
+        href="/nase-historie"
+        aria-current={pathname.slice(1) === "nase-historie" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >Historie</a
+      >
+    </li>
+
+    <li class="p-0 m-0">
+      <a
+        href="/technika"
+        aria-current={pathname.slice(1) === "technika" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >Technika</a
+      >
+    </li>
+    <li class="p-0 m-0">
+      <a
+        class="cursor-pointer text-nowrap font-semibold text-white transition-colors group bg-orange-600 px-6 py-2 rounded-2xl"
+        >Přidej se k nám</a
+      >
+    </li>
+  </ul>
+</div>
+
+<script>
+  const btn = document.querySelector("#mobile-menu-toggle");
+  const nav = document.querySelector("#navigation");
+
+  btn?.addEventListener("click", () => {
+    btn?.classList.toggle("is-open");
+    nav?.classList.toggle("hidden");
+  });
+</script>

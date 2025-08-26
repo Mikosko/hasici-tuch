@@ -1,23 +1,22 @@
 ---
-import CallIcon from "../assets/call-02-stroke-rounded.svg";
-import StationIcon from "../assets/house-01-stroke-rounded.svg";
-import ArrowIcon from "../assets/arrow-down-double-stroke-rounded.svg";
-import TeamIcon from "../assets/user-group-stroke-rounded.svg";
-import HeartIcon from "../assets/favourite-stroke-rounded.svg";
-import FacebookIcon from "../assets/facebook-02-stroke-rounded.svg";
-import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
-import MailIcon from "../assets/mail-01-stroke-rounded.svg";
-import LocationIcon from "../assets/location-03-stroke-rounded.svg";
-import PlaceholderIcon from "../assets/image-02-stroke-rounded.svg";
-import FireIcon from "../assets/fire-stroke-rounded.svg";
-import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
-import BulbIcon from "../assets/bulb-stroke-rounded.svg";
-import BookIcon from "../assets/book-02-stroke-rounded.svg";
-import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
-import Bg3Img from "../assets/530260744_1173567348150322_1018248472722609602_n.jpg";
+import Bg3Img from "../assets/489464296_1078213864352338_6720408195853930280_n.jpg";
+import BgImg from "../assets/9205cb9b7ee784916e5d2fb8ea955071.jpg";
+import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
+import BookIcon from "../assets/book-02-stroke-rounded.svg";
+import BulbIcon from "../assets/bulb-stroke-rounded.svg";
+import CallIcon from "../assets/call-02-stroke-rounded.svg";
+import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
+import FacebookIcon from "../assets/facebook-02-stroke-rounded.svg";
+import HeartIcon from "../assets/favourite-stroke-rounded.svg";
+import FireIcon from "../assets/fire-stroke-rounded.svg";
+import StationIcon from "../assets/house-01-stroke-rounded.svg";
+import LocationIcon from "../assets/location-03-stroke-rounded.svg";
 import LogoImg from "../assets/logo-no-text.png";
-
+import MailIcon from "../assets/mail-01-stroke-rounded.svg";
+import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
+import TeamIcon from "../assets/user-group-stroke-rounded.svg";
+import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
 import "../styles/global.css";
 import Navigation from "./Navigation.astro";
 ---
@@ -27,73 +26,61 @@ import Navigation from "./Navigation.astro";
     class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
   >
     <div class="container grid lg:grid-cols-2">
-      <div class="flex flex-row gap-4">
-        <img src={LogoImg.src} class="w-20" />
-        <h1
-          class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-        >
-          Hasiči Tuchořice
-          <small class="text-gray-800 text-sm font-medium"
-            >Pohotovostní služba</small
+      <div
+        class="flex justify-between items-center md:justify-center lg:justify-start"
+      >
+        <div class="flex flex-row gap-4">
+          <img src={LogoImg.src} class="w-20" />
+          <h1
+            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
           >
-        </h1>
+            Hasiči Tuchořice
+            <small class="text-gray-800 text-sm font-medium"
+              >Pohotovostní služba</small
+            >
+          </h1>
+        </div>
+
+        <div class="md:hidden sm:block">
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
+          >
+            <MenuIcon
+              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
+            />
+            <CloseIcon
+              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
+            />
+          </button>
+        </div>
       </div>
+
       <Navigation />
     </div>
   </div>
 </div>
 
-<div class="w-full min-h-screen relative">
+<div class="w-full max-h-90 h-90 relative">
   <img class="object-cover h-full w-full absolute" src={Bg3Img.src} />
   <div class="h-full w-full absolute bg-black/50"></div>
-  <div
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center"
-  >
-    <div
-      class="container mx-auto max-w-250 text-center items-center justify-center flex flex-col"
-    >
-      <img src={LogoImg.src} class="w-50 mb-4" />
-      <h2
-        class="flex flex-col justify-center text-gray-100 font-bold text-3xl mb-8"
-      >
-        Hasiči Tuchořice
-      </h2>
-      <h1
-        class="text-balance text-7xl font-extrabold text-gray-100 mb-6 text-shadow-xs"
-      >
-        Chránime vaše životy, <span
-          class="bg-gradient-to-l from-orange-600 to-orange-700 text-transparent bg-clip-text"
-        >
-          zdraví a majetek</span
-        >
+
+  <div class="absolute bottom-0 left-0 transform w-full flex flex-col">
+    <div class="container mx-auto p-4">
+      <h1 class="text-gray-100 font-bold text-7xl md:text-balance">
+        Naša Technika
       </h1>
-      <p
-        class="text-balance text-2xl text-gray-100 font-light text-shadow-xs tracking-wide italic"
-      >
-        "Oddaní dobrovolní hasiči sloužící s odvahou, soucitem a odhodláním od
-        prvního dne."
-      </p>
-    </div>
-  </div>
-  <div class="absolute bottom-0 w-full flex flex-col items-center">
-    <div class="container">
-      <div class="p-6 flex items-center flex-col w-full">
-        <!-- <span class="font-semibold text-black mb-6">Prejdite nadol</span> -->
-        <ArrowIcon class="text-white w-8 h-8 animate-bounce" />
-      </div>
     </div>
   </div>
 </div>
 
 <div
-  class="w-full bg-gray-100 px-4 py-20 flex items-center relative flex-col border-t border-black/50"
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
 >
   <div class="container">
-    <div class="grid grid-cols-1 gap-8 xl:items-end md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div>
-        <h2 class="text-gray-800 font-bold text-5xl mb-8 md:text-balance">
-          <span class="text-red-800">S hrdostí a odhodláním</span> pomáhame občanům
-        </h2>
         <p class="md:text-balance mb-6 text-lg text-gray-800">
           Náš sbor dobrovolných hasičů je už více než dvě desetiletí oporou při
           mimořádných událostech v naší obci. Jsme obyčejní lidé, kteří přijali
@@ -190,53 +177,7 @@ import Navigation from "./Navigation.astro";
     "
   />
 </div>
-<!-- A -->
-<div
-  class="w-full px-4 py-20 flex items-center flex-col relative border-t border-gray-200"
->
-  <div class="container">
-    <section class="mx-auto text-center mb-16">
-      <h3 class="text-gray-800 font-bold text-4xl mb-8">
-        Naše akce a aktivity
-      </h3>
 
-      <p class="text-balance text-gray-500 text-xl mx-auto w-[85%]">
-        Objevte, jak naši dobrovolní hasiči aktivně slouží a zapojují se do
-        komunity prostřednictvím školení, vzdělávání a osvětových programů.
-      </p>
-    </section>
-    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-full">
-      {
-        [1, 2, 3, 4, 5, 6].map((i) => (
-          <div class="border-gray-200 border-1 bg-gray-100 shadow-sm rounded-xl group cursor-pointer">
-            <div class="mx-auto flex flex-col">
-              <div class="bg-gray-200 flex items-stretch justify-items-stretch w-full min-h-[200px] max-h-[200px] overflow-hidden rounded-t-xl relative">
-                <span class="absolute top-3 z-20 text-white left-3 bg-gradient-to-l from-orange-600 to-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  Trenink
-                </span>
-                <img
-                  class="w-full object-cover relative z-10 transition-transform duration-300 transform group-hover:scale-110"
-                  src={`https://picsum.photos/seed/${i}/400/200`}
-                />
-                <PlaceholderIcon class="text-gray-300 w-12 h-12 absolute inset-0 m-auto" />
-              </div>
-              <div class="p-6 prose">
-                <h4 class="text-gray-800 text-xl group-hover:text-red-800">
-                  Tréninkové cvičení
-                </h4>
-                <small class="text-sm">Březen 4, 2025</small>
-                <p class="text-gray-800 font-light mt-1 leading-normal">
-                  Měsíční školení zaměřené na pokročilé záchranné techniky a
-                  práci s vybavením
-                </p>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </div>
-</div>
 <!-- B -->
 <div class="relative overflow-hidden">
   <div class="w-full bg-gray-800 px-4 py-20 flex items-center flex-col">
