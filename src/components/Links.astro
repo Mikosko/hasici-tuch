@@ -1,0 +1,252 @@
+---
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
+import LogoImg from "../assets/logo-no-text.png";
+import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
+import Bg3Img from "../assets/486845143_1066288332211558_5488508584863595783_n.jpg";
+import ThtLogoIcon from "../assets/tht-logo.svg";
+import KruhIcon from "../assets/kruh.svg";
+import HZSLogo from "../assets/hzs-logo.png";
+import PozariLogo from "../assets/pozari-cz.png";
+import HasicumLogo from "../assets/LOGO-HASICUM-CLIPART.png";
+import TechLogo from "../assets/Web-cerne-p6recnt5ajkbjb6fsnd46c6l95zm4yypifcrxa550w.jpg";
+import Mlogo from "../assets/mlogo.png";
+import Asclogo from "../assets/asclogo.png";
+import "../styles/global.css";
+import Footer from "./Footer.astro";
+import FooterContact from "./FooterContact.astro";
+import Navigation from "./Navigation.astro";
+import PageHeader from "./PageHeader.astro";
+---
+
+<div class="fixed z-50 t-0 l-0 w-full">
+  <div
+    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
+  >
+    <div class="container grid lg:grid-cols-2">
+      <div
+        class="flex justify-between items-center md:justify-center lg:justify-start"
+      >
+        <div class="flex flex-row gap-4">
+          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
+          <h1
+            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
+          >
+            Hasiči Tuchořice
+            <small class="text-gray-800 text-sm font-medium"
+              >Pohotovostní služba</small
+            >
+          </h1>
+        </div>
+
+        <div class="md:hidden sm:block">
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
+          >
+            <MenuIcon
+              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
+            />
+            <CloseIcon
+              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
+            />
+          </button>
+        </div>
+      </div>
+
+      <Navigation />
+    </div>
+  </div>
+</div>
+
+<PageHeader imgSrc={Bg3Img.src} title="Odkazy" />
+
+<div
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <div class="prose col-span-2 md:col-span-3">
+        <p class="mb-6 text-lg font-medium text-gray-800">
+          Na této stránce najdete výběr odkazů na instituce a organizace, které
+          souvisejí s
+          <strong>požární ochranou</strong>, <strong>dodavatele techniky</strong
+          > a <strong
+            >další zdroje související s činností hasičského sboru</strong
+          >.
+        </p>
+        <p class="mb-6 text-lg font-medium text-gray-800">
+          <strong>Věříme</strong>, že vám pomohou najít <strong
+            >potřebné informace</strong
+          > nebo rozšířit povědomí o činnosti hasičů.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <img src={HZSLogo.src} class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>Hasičský záchranný sbor ČR</strong><br />
+            — Státní bezpečnostní sbor, který chrání životy, zdraví obyvatel i majetek
+            před požáry a poskytuje pomoc při mimořádných událostech. Vede krajské
+            sbory a plní úkoly IZS, prevence i krizového řízení.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https://www.hzscr.cz">www.hzscr.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <div
+              class="flex justify-center items-center p-1 bg-[#fa961e] rounded-full"
+            >
+              <img src={PozariLogo.src} class="h-full" />
+            </div>
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>POŽÁRY.cz</strong><br />
+            — Portál <em class="italic">„ohnisko žhavých zpráv“</em> – přináší aktuální
+            zásahy, novinky ze světa hasičů, články o technice, vzdělávání i prevenci.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https://www.pozary.cz">www.pozary.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <img src={Mlogo.src} class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>Sdružení hasičů Čech, Moravy a Slezska</strong><br />
+            — Největší organizace dobrovolných hasičů v ČR – sdružuje sbory, organizuje
+            soutěže a věnuje se práci s mládeží i prevenci.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https://www.dh.cz/">www.dh.cz</a
+          >
+        </div>
+
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <img src={HasicumLogo.src} class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>Hasičům.cz</strong><br />
+            — Svolávací systém pro dobrovolné hasiče – mobilní i staniční aplikace,
+            SMS a GSM brána propojená s HZS ČR.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https:/www.hasicum.cz">www.hasicum.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <div class="flex justify-center items-center p-1 bg-white rounded">
+              <img src={TechLogo.src} class="h-full" />
+            </div>
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>TechnikaIZS.cz</strong><br />
+            — Nejrozsáhlejší česká databáze fotografií techniky IZS — hasiči, záchranáři,
+            policie, doplněné o články, reportáže a kalendář akcí.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https:/www.technikaizs.cz">www.technikaizs.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <KruhIcon class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>Záchranný kruh</strong><br />
+            — Vzdělávací portál zaměřený na prevenci, bezpečnost a výuku dětí i dospělých
+            v oblasti mimořádných událostí.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https:/www.zachranny-kruh.cz">www.zachranny-kruh.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <img src={Asclogo.src} class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>Metodika.cahd.cz</strong><br />
+            — Souhrn aktuálních metodických předpisů (bojový řád, cvičební řád, konspekty,
+            odborná příprava pro jednotky SDH) od České asociace hasičských důstojníků.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https://www.metodika.cahd.cz">www.metodika.cahd.cz</a
+          >
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
+        >
+          <div class="flex items-center w-full h-20 justify-center">
+            <ThtLogoIcon class="h-full" />
+          </div>
+          <p class="text-gray-800 text-sm font-semibold mt-6">
+            <strong>THT Polička, s.r.o.</strong><br />
+            — Výrobce hasičských vozidel, speciální techniky, kontejnerů a příslušenství
+            s historií sahající až do roku 1899. Spolehlivý partner pro modernizaci
+            vybavení.
+          </p>
+          <a
+            target="_blank"
+            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+            href="https://www.tht.cz">www.tht.cz</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-10"
+    style="
+    object-fit: cover;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+
+<!-- Footer -->
+<div class="relative overflow-hidden">
+  <FooterContact />
+  <Footer />
+</div>

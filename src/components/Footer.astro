@@ -6,6 +6,8 @@ import HeartIcon from "../assets/favourite-stroke-rounded.svg";
 import LocationIcon from "../assets/location-03-stroke-rounded.svg";
 import MailIcon from "../assets/mail-01-stroke-rounded.svg";
 import YoutubeIcon from "../assets/youtube-stroke-rounded.svg";
+// import WedosIcon from "../assets/Group.svg";
+import WedosIcon from "../assets/VEDOS-Hosting-logo-white-1024x128.png";
 import "../styles/global.css";
 ---
 
@@ -24,7 +26,7 @@ import "../styles/global.css";
             Česká Republika
           </li>
           <li
-            class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-start text-sm text-balance "
+            class="p-0 m-0 text-zinc-200 font-light flex flex-row gap-2 items-start text-sm text-balance"
           >
             <CallIcon class="text-zinc-200 w-4.5 shrink-0" /> Tísňové volání: 150
             nebo 112 <br />Stanice: +420 725 700 074
@@ -72,8 +74,23 @@ import "../styles/global.css";
           </li>
           <li class="p-0 m-0">
             <a
+              href="sponzori"
               class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
-              >Přidej se k nám</a
+              >Sponzoři</a
+            >
+          </li>
+          <li class="p-0 m-0">
+            <a
+              href="odkazy"
+              class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+              >Odkazy</a
+            >
+          </li>
+           <li class="p-0 m-0">
+            <a
+              href="sponzori"
+              class="cursor-pointer font-light hover:text-orange-600 transition-colors group"
+              >Kontakt</a
             >
           </li>
         </ul>
@@ -100,7 +117,7 @@ import "../styles/global.css";
             >
           </li>
         </ul>
-        <p class="text-zinc-200 font-light leading-normal text-sm">
+        <p class="text-zinc-200 font-light leading-normal text-sm mb-6">
           Zůstaňte ve spojení pro nouzové informace, oznámení o akcích a novinky
           z komunity.
         </p>
@@ -114,9 +131,20 @@ import "../styles/global.css";
         <strong
           class="font-semibold flex-col-reverse sm:flex-row mt-2.5 sm:mt-0 flex items-center justify-center sm:gap-2"
         >
-          <HeartIcon class="text-red-900 fill-red-700 mt-2 sm:mt-0" />S hrdostí sloužíme naší
-          komunitě od roku 2003
+          <HeartIcon
+            class="text-red-900 fill-red-700 mt-2 sm:mt-0 animate-pulse"
+          />S hrdostí sloužíme naší komunitě od roku 2003
         </strong>
+
+        <div class="mt-4 mx-auto">
+          Ďekujeme za Webhosting
+          <a href="https://vedos.cz/" target="_blank">
+            <img
+              src={WedosIcon.src}
+              class="w-60 relative z-10 mx-auto mt-2"
+            /></a
+          >
+        </div>
       </span>
     </div>
   </div>

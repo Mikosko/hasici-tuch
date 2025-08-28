@@ -1,0 +1,97 @@
+---
+import CallIcon from "../assets/call-02-stroke-rounded.svg";
+import StationIcon from "../assets/house-01-stroke-rounded.svg";
+import TeamIcon from "../assets/user-group-stroke-rounded.svg";
+import "../styles/global.css";
+---
+
+<div class="w-full bg-gray-800 px-4 py-20 flex items-center flex-col">
+  <div class="container">
+    <section class="mx-auto text-center mb-16">
+      <h3 class="text-white font-bold text-4xl mb-8">Kontaktujte nás</h3>
+
+      <p class="text-balance text-zinc-50 text-xl w-[85%] mx-auto">
+        Ať už potřebujete pohotovostní pomoc, chcete se přihlásit jako
+        dobrovolník, nebo máte otázky ohledně našich služeb, jsme tu, abychom
+        vám pomohli.
+      </p>
+    </section>
+    <div class="grid gap-8 w-full sm:grid-cols-2 md:grid-cols-3">
+      <div
+        class="border-red-900 border-1 bg-red-800 shadow-sm rounded-xl text-white p-6"
+      >
+        <div
+          class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+        >
+          <div
+            class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+          >
+            <CallIcon class="w-12 h-12 m-0 text-red-800" />
+          </div>
+          <h4 class="text-white mt-6">Pohotovost</h4>
+
+          <p class="text-zinc-50 font-light leading-normal">
+            V případě požáru, zdravotní nebo záchranné nouze
+          </p>
+
+          <a
+            href="tel:+420725700074"
+            class="cursor-pointer no-underline rounded-xl bg-white text-red-900 font-bold text-xl px-8 py-2 text-center"
+          >
+            Volej 150
+          </a>
+        </div>
+      </div>
+      <div
+        class="border-neutral-600 border-1 bg-neutral-800 shadow-sm rounded-xl text-white p-6"
+      >
+        <div
+          class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+        >
+          <div
+            class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+          >
+            <StationIcon class="w-12 h-12 m-0 text-neutral-800" />
+          </div>
+          <h4 class="text-white mt-6">Hasičská stanice</h4>
+
+          <p class="text-zinc-50 font-light leading-normal">
+            Tuchořice 30 43969,<br />
+            Česká Republika
+          </p>
+
+          <a
+            href="tel:+420725700074"
+            class="cursor-pointer no-underline rounded-xl bg-white text-neutral-800 font-bold text-xl px-8 py-2 text-center"
+          >
+            +420 725 700 074
+          </a>
+        </div>
+      </div>
+      <div
+        class="border-orange-700 border-1 bg-orange-600 shadow-sm rounded-xl text-white p-6"
+      >
+        <div
+          class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
+        >
+          <div
+            class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
+          >
+            <TeamIcon class="w-12 h-12 m-0 text-orange-600" />
+          </div>
+          <h4 class="text-white mt-6">Dobrovolník</h4>
+
+          <p class="text-zinc-50 font-light leading-normal">
+            Přidej se k našemu týmu a udělej změnu a pomoz měnit věci k lepšímu
+          </p>
+
+          <button
+            class="cursor-pointer rounded-xl bg-white text-orange-600 font-bold text-xl px-8 py-2 text-center"
+          >
+            Zjisti více
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

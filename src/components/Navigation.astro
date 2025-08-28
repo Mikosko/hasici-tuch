@@ -42,13 +42,20 @@ const { pathname } = Astro.url;
         >Historie</a
       >
     </li>
-
     <li class="p-0 m-0">
       <a
         href="/technika"
         aria-current={pathname.slice(1) === "technika" ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
         >Technika</a
+      >
+    </li>
+    <li class="p-0 m-0">
+      <a
+        href="/technika"
+        aria-current={pathname.slice(1) === "technika" ? "page" : "false"}
+        class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
+        >Výjezdy</a
       >
     </li>
     <li class="p-0 m-0">

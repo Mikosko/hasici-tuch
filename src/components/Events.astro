@@ -1,19 +1,15 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
 import Bg3Img from "../assets/487187042_1068593595314365_3021601317366063093_n.jpg";
-import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
-import BookIcon from "../assets/book-02-stroke-rounded.svg";
-import BulbIcon from "../assets/bulb-stroke-rounded.svg";
-import CallIcon from "../assets/call-02-stroke-rounded.svg";
 import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import FireIcon from "../assets/fire-stroke-rounded.svg";
-import StationIcon from "../assets/house-01-stroke-rounded.svg";
+import PlaceholderIcon from "../assets/image-02-stroke-rounded.svg";
 import LogoImg from "../assets/logo-no-text.png";
 import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
-import TeamIcon from "../assets/user-group-stroke-rounded.svg";
 import "../styles/global.css";
 import Footer from "./Footer.astro";
+import FooterContact from "./FooterContact.astro";
 import Navigation from "./Navigation.astro";
+import PageHeader from "./PageHeader.astro";
 ---
 
 <div class="fixed z-50 t-0 l-0 w-full">
@@ -57,111 +53,47 @@ import Navigation from "./Navigation.astro";
   </div>
 </div>
 
-<div class="w-full max-h-90 h-90 relative">
-  <img class="object-cover h-full w-full absolute" src={Bg3Img.src} />
-  <div class="h-full w-full absolute bg-black/50"></div>
-
-  <div class="absolute bottom-0 left-0 transform w-full flex flex-col">
-    <div class="container mx-auto p-4">
-      <h1 class="text-gray-100 font-bold text-7xl md:text-balance">
-        Naše akce a aktivity
-      </h1>
-    </div>
-  </div>
-</div>
+<PageHeader imgSrc={Bg3Img.src} title="Naše akce a aktivity" />
 
 <div
   class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
 >
   <div class="container">
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-      <div>
-        <p class="md:text-balance mb-6 text-lg text-gray-800">
-          Náš sbor dobrovolných hasičů je už více než dvě desetiletí oporou při
-          mimořádných událostech v naší obci. Jsme obyčejní lidé, kteří přijali
-          mimořádné poslání – chránit a pomáhat svým sousedům.
-        </p>
-        <p class="md:text-balance mb-6 text-lg text-gray-800">
-          Od hašení požárů a záchranných zásahů až po osvětu a preventivní
-          programy se naši členové pravidelně školí, aby byli vždy připraveni,
-          když povinnost zavolá.
-        </p>
-
-        <div class="grid grid-cols-2 gap-8">
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">25+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Aktivních dobrovolníků</span
-            >
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <p class="mb-6 text-lg font-medium text-gray-800 col-span-2">
+        Objevte, jak naši dobrovolní hasiči aktivně slouží a zapojují se do
+        komunity prostřednictvím školení, vzdělávání a osvětových programů.
+      </p>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-full">
+      {
+        [1, 2, 3, 4, 5, 6].map((i) => (
+          <div class="border-gray-200 border-1 bg-gray-100 shadow-sm rounded-xl group cursor-pointer">
+            <div class="mx-auto flex flex-col">
+              <div class="bg-gray-200 flex items-stretch justify-items-stretch w-full min-h-[200px] max-h-[200px] overflow-hidden rounded-t-xl relative">
+                <span class="absolute top-3 z-20 text-white left-3 bg-gradient-to-l from-orange-600 to-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  Trenink
+                </span>
+                <img
+                  class="w-full object-cover relative z-10 transition-transform duration-300 transform group-hover:scale-110"
+                  src={`https://picsum.photos/seed/${i}/400/200`}
+                />
+                <PlaceholderIcon class="text-gray-300 w-12 h-12 absolute inset-0 m-auto" />
+              </div>
+              <div class="p-6 prose">
+                <h4 class="text-gray-800 text-xl group-hover:text-red-800">
+                  Tréninkové cvičení
+                </h4>
+                <small class="text-sm">Březen 4, 2025</small>
+                <p class="text-gray-800 font-light mt-1 leading-normal">
+                  Měsíční školení zaměřené na pokročilé záchranné techniky a
+                  práci s vybavením
+                </p>
+              </div>
+            </div>
           </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">70+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Tísňových výjezdů ročně</span
-            >
-          </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">23</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Let pomoci komunitě</span
-            >
-          </div>
-          <div
-            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1"
-          >
-            <strong class="text-red-800 text-3xl">5000+</strong>
-            <span class="text-gray-800 text-sm font-semibold"
-              >Občanů, kterým jsme pomohli</span
-            >
-          </div>
-        </div>
-      </div>
-      <div class="flex gap-6 flex-col">
-        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
-          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <FireIcon class="text-red-800" /> Zásahová činnost
-          </h5>
-          <p class="text-gray-800 text-sm font-semibold">
-            Jsme připraveni 24/7 k výjezdům – od hašení požárů přes záchranné
-            práce až po poskytování první pomoci v celém našem zásahovém obvodu.
-          </p>
-        </div>
-        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
-          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BookIcon class="text-red-800" />Výcvik dobrovolníků
-          </h5>
-          <p class="text-gray-800 text-sm font-semibold">
-            Naši členové se neustále školí a získávají nové certifikace, abychom
-            vždy udrželi nejvyšší standard bezpečnosti a efektivity.
-          </p>
-        </div>
-        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
-          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BulbIcon class="text-red-800" />Osvěta a prevence
-          </h5>
-          <p class="text-gray-800 text-sm font-semibold">
-            Pořádáme programy požární ochrany, navštěvujeme školy a vedeme
-            kampaně, které mají za cíl předcházet mimořádným událostem dříve,
-            než nastanou.
-          </p>
-        </div>
-        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
-          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <HandShakeIcon class="text-red-800" />Spolupráce s obcí a okolím
-          </h5>
-          <p class="text-gray-800 text-sm font-semibold">
-            Úzce spolupracujeme se sousedními obcemi, spolky a organizacemi.
-            Podílíme se na kulturních a společenských akcích a jsme vždy tam,
-            kde je potřeba pomoc.
-          </p>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
   <img
@@ -173,99 +105,8 @@ import Navigation from "./Navigation.astro";
   />
 </div>
 
-<!-- B -->
+<!-- Footer -->
 <div class="relative overflow-hidden">
-  <div class="w-full bg-gray-800 px-4 py-20 flex items-center flex-col">
-    <div class="container">
-      <section class="mx-auto text-center mb-16">
-        <h3 class="text-white font-bold text-4xl mb-8">Kontaktujte nás</h3>
-
-        <p class="text-balance text-zinc-50 text-xl w-[85%] mx-auto">
-          Ať už potřebujete pohotovostní pomoc, chcete se přihlásit jako
-          dobrovolník, nebo máte otázky ohledně našich služeb, jsme tu, abychom
-          vám pomohli.
-        </p>
-      </section>
-      <div class="grid gap-8 w-full sm:grid-cols-2 md:grid-cols-3">
-        <div
-          class="border-red-900 border-1 bg-red-800 shadow-sm rounded-xl text-white p-6"
-        >
-          <div
-            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
-          >
-            <div
-              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
-            >
-              <CallIcon class="w-12 h-12 m-0 text-red-800" />
-            </div>
-            <h4 class="text-white mt-6">Pohotovost</h4>
-
-            <p class="text-zinc-50 font-light leading-normal">
-              V případě požáru, zdravotní nebo záchranné nouze
-            </p>
-
-            <a
-              href="tel:+420725700074"
-              class="cursor-pointer no-underline rounded-xl bg-white text-red-900 font-bold text-xl px-8 py-2 text-center"
-            >
-              Volej 150
-            </a>
-          </div>
-        </div>
-        <div
-          class="border-neutral-600 border-1 bg-neutral-800 shadow-sm rounded-xl text-white p-6"
-        >
-          <div
-            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
-          >
-            <div
-              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
-            >
-              <StationIcon class="w-12 h-12 m-0 text-neutral-800" />
-            </div>
-            <h4 class="text-white mt-6">Hasičská stanice</h4>
-
-            <p class="text-zinc-50 font-light leading-normal">
-              Tuchořice 30 43969,<br />
-              Česká Republika
-            </p>
-
-            <a
-              href="tel:+420725700074"
-              class="cursor-pointer no-underline rounded-xl bg-white text-neutral-800 font-bold text-xl px-8 py-2 text-center"
-            >
-              +420 725 700 074
-            </a>
-          </div>
-        </div>
-        <div
-          class="border-orange-700 border-1 bg-orange-600 shadow-sm rounded-xl text-white p-6"
-        >
-          <div
-            class="mx-auto flex flex-col items-center text-center prose prose-h4:text-2xl"
-          >
-            <div
-              class="aspect-square w-20 rounded-full bg-white not-prose flex items-center justify-center"
-            >
-              <TeamIcon class="w-12 h-12 m-0 text-orange-600" />
-            </div>
-            <h4 class="text-white mt-6">Dobrovolník</h4>
-
-            <p class="text-zinc-50 font-light leading-normal">
-              Přidej se k našemu týmu a udělej změnu a pomoz měnit věci k
-              lepšímu
-            </p>
-
-            <button
-              class="cursor-pointer rounded-xl bg-white text-orange-600 font-bold text-xl px-8 py-2 text-center"
-            >
-              Zjisti více
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <FooterContact />
   <Footer />
 </div>
