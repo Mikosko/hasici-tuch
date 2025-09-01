@@ -1,12 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta name="generator" content={Astro.generator} />
-    <title>Hasiči Tuchořice</title>
+
+    <!-- Favicony a manifest  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Titulek a popis -->
+    <title>SDH Tuchořice – Dobrovolní hasiči | Oficiální web</title>
+    <meta
+      name="description"
+      content="Sbor dobrovolných hasičů Tuchořice – zásahy, prevence, technika, pro média a informace pro veřejnost. JPO‑II, 5 minut doba výjezdu."
+    />
+    <!-- Kanonická adresa + případné jazykové mutace -->
+    <link rel="canonical" href="https://hasicituchorice.cz/" />
+
+    <!-- Indexace -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
   </head>
+
   <body class="bg-zinc-50">
     <slot />
   </body>
