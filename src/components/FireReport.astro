@@ -1,0 +1,216 @@
+---
+import Bg3Img from "../assets/486713651_1066496622190729_542322995227403382_n.jpg";
+import WarningIcon from "../assets/alert-square-stroke-rounded.svg";
+import "../styles/global.css";
+import BottomPanel from "./BottomPanel.astro";
+import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+---
+
+<TopPanel />
+<PageHeader imgSrc={Bg3Img.src} title="Pálení ohňů – pravidla a povinnosti" />
+
+<div
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+    <div class="grid grid-cols-1 gap-8">
+      <div class="">
+        <div
+          class="border-orange-700 border-1 bg-orange-600 shadow-sm rounded-xl text-white p-6 my-6 flex gap-6 items-center"
+        >
+          <WarningIcon class="text-white h-40 w-40" />
+          <div>
+            <p class="text-xl">
+              <strong>Pozor:</strong> Od <strong>1. března 2025</strong> je v ČR
+              <strong>zakázáno pálit biologický odpad</strong>
+              <em>(listí, tráva, čerstvé větve)</em>.<br /> Na otevřeném ohni lze
+              spalovat jen suché, neošetřené dřevo <em>(např. táborák)</em>.
+              Bioodpad patří na kompost, do hnědé nádoby nebo do sběrného dvora.
+            </p>
+            <p class="mt-4 text-sm">
+              <a href="https://www.hzscr.cz" target="_blank">hzscr.gov.cz</a>
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1 col-span-2 mb-6"
+        >
+          <h3
+            class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+          >
+            Jak ohlásit (nejrychlejší způsob)
+          </h3>
+          <div class="grid md:grid-cols-3 grid-cols-1 items-center mb-10 gap-6">
+            <div class="col-span-2">
+              <ol
+                class="list-decimal list-inside space-y-1 text-brand font-medium text-gray-800"
+              >
+                <li>
+                  Otevřete on-line formulář HZS – <a
+                    href="https://paleni.izscr.cz"
+                    class="italic text-red-800 font-bold hover:text-red-900 hover:underline transition-colors"
+                    target="_blank">Evidence pálení</a
+                  >.
+                </li>
+                <li>
+                  Vyplňte základní údaje (datum/čas, místo, odpovědná osoba,
+                  telefon).
+                </li>
+                <li>
+                  Odešlete formulář – ohlášení se uloží na operačním středisku
+                  HZS.
+                </li>
+              </ol>
+            </div>
+            <a
+              href="https://paleni.izscr.cz"
+              target="_blank"
+              class="block w-full max-w-sm mx-auto text-center px-6 py-4 bg-orange-600 text-white rounded-2xl shadow-sm hover:bg-orange-700 transition"
+            >
+              <span class="text-xl font-bold">Ohlásit pálení</span><br />
+              <span class="text-sm opacity-90 italic"
+                >oficiální formulář HZS</span
+              >
+            </a>
+          </div>
+          <p class="text-lg font-bold text-gray-800">
+            — Pokud se počasí zhorší (silný vítr), pálení přerušte a ohniště
+            uhaste. Respektujte pokyny operačního důstojníka.
+          </p>
+        </div>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- What you can/can't burn -->
+          <div
+            class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1"
+          >
+            <h3
+              class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+            >
+              Co (ne)smíte pálit
+            </h3>
+            <ul
+              class="list-disc list-inside space-y-1 text-brand text-gray-800 mb-6"
+            >
+              <li>
+                <strong>Smíte:</strong> suché, čisté dřevo <em
+                  >(bez laku a chemie)</em
+                > v bezpečně zřízeném ohništi.
+              </li>
+              <li>
+                <strong>Nesmíte:</strong> listí, trávu, vlhké zbytky, čerstvé větve
+                ani jakékoliv odpady <em>(plasty, dřevo s nátěrem apod.)</em>.
+              </li>
+            </ul>
+            <a
+              href="https://www.hzscr.cz"
+              class="mt-auto self-start text-sm italic text-red-800 font-bold hover:text-red-900 hover:underline transition-colors"
+              target="_blank">hzscr.gov.cz</a
+            >
+          </div>
+
+          <div
+            class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1"
+          >
+            <h3
+              class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+            >
+              Kdy a komu hlásit
+            </h3>
+            <ul
+              class="list-disc list-inside text-brand text-gray-800 mb-6 space-y-1"
+            >
+              <li>
+                <strong>Občané:</strong> povinnost ohlášení není zákonem výslovně
+                stanovena, ale doporučuje se pro prevenci zbytečných výjezdů hasičů.
+              </li>
+              <li>
+                <strong>Firmy a podnikající osoby:</strong> pálení ohlašují HZS –
+                uvádí datum, čas, místo a kontaktní osobu.
+              </li>
+            </ul>
+            <div class="text-sm">
+              <a
+                href="https://paleni.izscr.cz"
+                class="mt-auto self-start text-sm italic text-red-800 font-bold hover:text-red-900 hover:underline transition-colors"
+                target="_blank">paleni.izscr.cz</a
+              > •
+              <a
+                href="https://www.hzscr.cz"
+                class="mt-auto self-start text-sm italic text-red-800 font-bold hover:text-red-900 hover:underline transition-colors"
+                target="_blank">hzscr.gov.cz</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1"
+          >
+            <h3
+              class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+            >
+              Bezpečnostní pravidla při pálení
+            </h3>
+            <ul
+              class="list-disc list-inside text-brand text-gray-800 mb-6 space-y-1"
+            >
+              <li>
+                Pálujte mimo vítr, mimo suché porosty a v bezpečné vzdálenosti
+                od staveb a lesů.
+              </li>
+              <li>Oheň musí být pod neustálým dozorem dospělé osoby.</li>
+              <li>Mějte u sebe vodu, hadici, hasicí přístroj nebo lopatu.</li>
+              <li>Nepoužívejte hořlaviny k rozdělávání ohně.</li>
+              <li>Po skončení důkladně prolijte a zkontrolujte ohniště.</li>
+              <li>
+                <span class="font-bold text-red-800"
+                  >Trávu nikdy nevypalujte – je to nebezpečné a zakázané.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1"
+          >
+            <h3
+              class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+            >
+              Místní pravidla obce
+            </h3>
+            <p class="text-brand text-gray-800 mb-4">
+              Před pálením si zkontrolujte obecní vyhlášku <em>
+                (dny/časy pálení, další podmínky)</em
+              >
+            </p>
+            <p class="text-lg text-gray-800 mb-6">
+              <strong class="text-red-800">Rychlé kontakty:</strong><br />
+              <strong>150</strong> – Hasiči<br />
+              <strong>112</strong> – Tísňová linka
+            </p>
+            <p class="text-lg font-bold text-gray-800">
+              — Ohlášení na HZS nenahrazuje povinnosti dané obcí.
+            </p>
+            <a
+              href="https://www.hzscr.cz"
+              class="mt-auto self-start text-sm italic text-red-800 font-bold hover:text-red-900 hover:underline transition-colors"
+              target="_blank">hzscr.gov.cz</a
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-10"
+    style="
+    object-fit: cover;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+
+<BottomPanel />

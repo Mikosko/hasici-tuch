@@ -1,61 +1,13 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
 import Bg3Img from "../assets/489464296_1078213864352338_6720408195853930280_n.jpg";
-import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
-import BookIcon from "../assets/book-02-stroke-rounded.svg";
-import BulbIcon from "../assets/bulb-stroke-rounded.svg";
-import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import FireIcon from "../assets/fire-stroke-rounded.svg";
-import LogoImg from "../assets/logo-no-text.png";
-import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
 import "../styles/global.css";
-import Footer from "./Footer.astro";
-import FooterContact from "./FooterContact.astro";
-import Navigation from "./Navigation.astro";
+import BottomPanel from "./BottomPanel.astro";
 import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
 ---
 
-<div class="fixed z-50 t-0 l-0 w-full">
-  <div
-    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
-  >
-    <div class="container grid lg:grid-cols-2">
-      <div
-        class="flex justify-between items-center md:justify-center lg:justify-start"
-      >
-        <div class="flex flex-row gap-4">
-          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
-          <h1
-            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-          >
-            Hasiči Tuchořice
-            <small class="text-gray-800 text-sm font-medium"
-              >Pohotovostní služba</small
-            >
-          </h1>
-        </div>
-
-        <div class="md:hidden sm:block">
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
-          >
-            <MenuIcon
-              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
-            />
-            <CloseIcon
-              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
-            />
-          </button>
-        </div>
-      </div>
-
-      <Navigation />
-    </div>
-  </div>
-</div>
-
+<TopPanel />
 <PageHeader imgSrc={Bg3Img.src} title="Naše technika" />
 
 <div
@@ -114,40 +66,51 @@ import PageHeader from "./PageHeader.astro";
       <div class="flex gap-6 flex-col">
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <FireIcon class="text-red-800" /> Zásahová činnost
+            LIAZ CAS 25 (2011)
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Jsme připraveni 24/7 k výjezdům – od hašení požárů přes záchranné
-            práce až po poskytování první pomoci v celém našem zásahovém obvodu.
+            Historicky důležitá cisterna kategorie CAS 25, která znamenala první
+            velký posun ve výbavě jednotky. Spolehlivý „pracant“ na technické
+            pomoci i požáry menšího a středního rozsahu.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BookIcon class="text-red-800" />Výcvik dobrovolníků
+            Tatra Force CAS 30 (2017)
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Naši členové se neustále školí a získávají nové certifikace, abychom
-            vždy udrželi nejvyšší standard bezpečnosti a efektivity.
+            Moderní těžká cisterna pro zásahy s vysokými nároky na objem vody a
+            průchodnost terénem. Ideální pro dlouhotrvající požáry a zásahy mimo
+            zpevněné komunikace.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <BulbIcon class="text-red-800" />Osvěta a prevence
+            Ford Transit DA-L1Z (2019)
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Pořádáme programy požární ochrany, navštěvujeme školy a vedeme
-            kampaně, které mají za cíl předcházet mimořádným událostem dříve,
-            než nastanou.
+            Dopravní automobil pro převoz družstva a materiálu. Univerzál, který
+            zvyšuje rychlost logistické podpory i při větších událostech.
           </p>
         </div>
         <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
           <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
-            <HandShakeIcon class="text-red-800" />Spolupráce s obcí a okolím
+            Scania P 440 CAS 20 (2021)
           </h5>
           <p class="text-gray-800 text-sm font-semibold">
-            Úzce spolupracujeme se sousedními obcemi, spolky a organizacemi.
-            Podílíme se na kulturních a společenských akcích a jsme vždy tam,
-            kde je potřeba pomoc.
+            Novější výjezdová cisterna kategorie CAS 20 pro všestranné použití –
+            rychlý výjezd, moderní zázemí posádky, dobré jízdní vlastnosti v
+            obci i mimo ni.
+          </p>
+        </div>
+        <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+          <h5 class="text-red-800 text-2xl font-bold flex items-center gap-3">
+            Velitelský automobil
+          </h5>
+          <p class="text-gray-800 text-sm font-semibold">
+            Vozidlo pro taktickou koordinaci zásahu a spojení s operačním
+            střediskem. Umožňuje veliteli být rychle na místě, provést průzkum a
+            řídit síly a prostředky.
           </p>
         </div>
       </div>
@@ -162,8 +125,4 @@ import PageHeader from "./PageHeader.astro";
   />
 </div>
 
-<!-- Footer -->
-<div class="relative overflow-hidden">
-  <FooterContact />
-  <Footer />
-</div>
+<BottomPanel />

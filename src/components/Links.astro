@@ -1,65 +1,27 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
-import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import LogoImg from "../assets/logo-no-text.png";
-import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
 import Bg3Img from "../assets/486845143_1066288332211558_5488508584863595783_n.jpg";
-import ThtLogoIcon from "../assets/tht-logo.svg";
-import KruhIcon from "../assets/kruh.svg";
-import HZSLogo from "../assets/hzs-logo.png";
-import PozariLogo from "../assets/pozari-cz.png";
 import HasicumLogo from "../assets/LOGO-HASICUM-CLIPART.png";
 import TechLogo from "../assets/Web-cerne-p6recnt5ajkbjb6fsnd46c6l95zm4yypifcrxa550w.jpg";
-import Mlogo from "../assets/mlogo.png";
 import Asclogo from "../assets/asclogo.png";
+import HZSLogo from "../assets/hzs-logo.png";
+import KruhIcon from "../assets/kruh.svg";
+import CrestIcon from "../assets/crest.svg";
+import ZnakImg from "../assets/znak.png";
+import CrestImg from "../assets/crest.png";
+import Mlogo from "../assets/mlogo.png";
+import PozariLogo from "../assets/pozari-cz.png";
+import CoatLogo from "../assets/Coat_of_arms_of_Zalužice.png";
+import ThtLogoIcon from "../assets/tht-logo.svg";
 import "../styles/global.css";
-import Footer from "./Footer.astro";
-import FooterContact from "./FooterContact.astro";
-import Navigation from "./Navigation.astro";
+import BottomPanel from "./BottomPanel.astro";
+import LinkWidget from "./LinkWidget.astro";
 import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
+import TuchoriceErb from "../assets/Mask group (1).png";
 ---
 
-<div class="fixed z-50 t-0 l-0 w-full">
-  <div
-    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
-  >
-    <div class="container grid lg:grid-cols-2">
-      <div
-        class="flex justify-between items-center md:justify-center lg:justify-start"
-      >
-        <div class="flex flex-row gap-4">
-          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
-          <h1
-            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-          >
-            Hasiči Tuchořice
-            <small class="text-gray-800 text-sm font-medium"
-              >Pohotovostní služba</small
-            >
-          </h1>
-        </div>
-
-        <div class="md:hidden sm:block">
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
-          >
-            <MenuIcon
-              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
-            />
-            <CloseIcon
-              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
-            />
-          </button>
-        </div>
-      </div>
-
-      <Navigation />
-    </div>
-  </div>
-</div>
-
+<TopPanel />
 <PageHeader imgSrc={Bg3Img.src} title="Odkazy" />
 
 <div
@@ -161,77 +123,83 @@ import PageHeader from "./PageHeader.astro";
             href="https:/www.hasicum.cz">www.hasicum.cz</a
           >
         </div>
-        <div
-          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
-        >
-          <div class="flex items-center w-full h-20 justify-center">
-            <div class="flex justify-center items-center p-1 bg-white rounded">
-              <img src={TechLogo.src} class="h-full" />
-            </div>
-          </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            <strong>TechnikaIZS.cz</strong><br />
-            — Nejrozsáhlejší česká databáze fotografií techniky IZS — hasiči, záchranáři,
-            policie, doplněné o články, reportáže a kalendář akcí.
-          </p>
-          <a
-            target="_blank"
-            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
-            href="https:/www.technikaizs.cz">www.technikaizs.cz</a
+
+        <LinkWidget url="www.technikaizs.cz">
+          <div
+            class="flex justify-center items-center p-1 bg-white rounded"
+            slot="image"
           >
-        </div>
-        <div
-          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
-        >
-          <div class="flex items-center w-full h-20 justify-center">
-            <KruhIcon class="h-full" />
+            <img src={TechLogo.src} class="h-full" />
           </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            <strong>Záchranný kruh</strong><br />
-            — Vzdělávací portál zaměřený na prevenci, bezpečnost a výuku dětí i dospělých
-            v oblasti mimořádných událostí.
-          </p>
-          <a
-            target="_blank"
-            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
-            href="https:/www.zachranny-kruh.cz">www.zachranny-kruh.cz</a
-          >
-        </div>
-        <div
-          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
-        >
-          <div class="flex items-center w-full h-20 justify-center">
-            <img src={Asclogo.src} class="h-full" />
-          </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            <strong>Metodika.cahd.cz</strong><br />
-            — Souhrn aktuálních metodických předpisů (bojový řád, cvičební řád, konspekty,
-            odborná příprava pro jednotky SDH) od České asociace hasičských důstojníků.
-          </p>
-          <a
-            target="_blank"
-            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
-            href="https://www.metodika.cahd.cz">www.metodika.cahd.cz</a
-          >
-        </div>
-        <div
-          class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-90"
-        >
-          <div class="flex items-center w-full h-20 justify-center">
-            <ThtLogoIcon class="h-full" />
-          </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            <strong>THT Polička, s.r.o.</strong><br />
-            — Výrobce hasičských vozidel, speciální techniky, kontejnerů a příslušenství
-            s historií sahající až do roku 1899. Spolehlivý partner pro modernizaci
-            vybavení.
-          </p>
-          <a
-            target="_blank"
-            class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
-            href="https://www.tht.cz">www.tht.cz</a
-          >
-        </div>
+
+          <strong>TechnikaIZS.cz</strong><br />
+          — Nejrozsáhlejší česká databáze fotografií techniky IZS — hasiči, záchranáři,
+          policie, doplněné o články, reportáže a kalendář akcí.
+        </LinkWidget>
+
+        <LinkWidget url="www.zachranny-kruh.cz">
+          <KruhIcon slot="image" class="h-full" />
+          <strong>Záchranný kruh</strong><br />
+          — Vzdělávací portál zaměřený na prevenci, bezpečnost a výuku dětí i dospělých
+          v oblasti mimořádných událostí.
+        </LinkWidget>
+
+        <LinkWidget url="www.metodika.cahd.cz">
+          <img slot="image" src={Asclogo.src} class="h-full" />
+
+          <strong>Metodika.cahd.cz</strong><br />
+          — Souhrn aktuálních metodických předpisů (bojový řád, cvičební řád, konspekty,
+          odborná příprava pro jednotky SDH) od České asociace hasičských důstojníků.
+        </LinkWidget>
+
+        <LinkWidget url="www.tht.cz">
+          <ThtLogoIcon class="w-full" slot="image" class="h-full" />
+
+          <strong>THT Polička, s.r.o.</strong><br />
+          — Výrobce hasičských vozidel, speciální techniky, kontejnerů a příslušenství
+          s historií sahající až do roku 1899. Spolehlivý partner pro modernizaci
+          vybavení.
+        </LinkWidget>
+        <LinkWidget url="www.tuchorice.cz">
+          <img
+            src={TuchoriceErb.src}
+            class="h-full"
+            slot="image"
+            class="h-full"
+          />
+
+          <strong>Obec Tuchořice</strong><br />
+          — Portál obce s aktuálními informacemi: úřední deska, kalendář akcí, zpravodaj,
+          kontakty a veřejné služby.
+        </LinkWidget>
+        <LinkWidget url="www.libesice-obec.cz">
+          <CrestIcon class="h-full" slot="image" class="h-full" />
+
+          <strong>Obec Liběšice</strong><br />
+          — Úřední informace, kontakty, aktuální dění, úřední deska i kalendář akcí
+          obce.
+        </LinkWidget>
+        <LinkWidget url="www.ou-lipno-louny.cz">
+          <img src={CrestImg.src} class="h-full" slot="image" class="h-full" />
+
+          <strong>Obec Lipno</strong><br />
+          — Aktuální obecní informace: úřední deska, akcí kalendář, zpravodaj a kontakty
+          obecního úřadu.
+        </LinkWidget>
+        <LinkWidget url="www.destnice.cz">
+          <img src={ZnakImg.src} class="h-full" slot="image" class="h-full" />
+
+          <strong>Obec Deštnice</strong><br />
+          — Oficiální stránky obce Deštnice: úřední deska, aktuality, kontakty, historie
+          a obecní dokumenty.
+        </LinkWidget>
+        <LinkWidget url="www.zaluzice.cz">
+          <img src={CoatLogo.src} class="h-full" slot="image" class="h-full" />
+
+          <strong>Obec Deštnice</strong><br />
+          — Oficiální stránky obce: úřední deska, aktuality, dokumenty, kontakty
+          a informace o životě v obci.
+        </LinkWidget>
       </div>
     </div>
   </div>
@@ -245,8 +213,4 @@ import PageHeader from "./PageHeader.astro";
   />
 </div>
 
-<!-- Footer -->
-<div class="relative overflow-hidden">
-  <FooterContact />
-  <Footer />
-</div>
+<BottomPanel />

@@ -1,61 +1,17 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
-import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
-import HandShakeIcon from "../assets/healtcare-stroke-rounded.svg";
-import LogoImg from "../assets/logo-no-text.png";
 import FavIcon from "../assets/favourite-stroke-rounded.svg";
-import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
+import HandShakeIcon from "../assets/healtcare-stroke-rounded.svg";
+import TuchoriceErb from "../assets/Mask group (1).png";
 import Bg3Img from "../assets/sponsors.jpg";
 import VedosIcon from "../assets/VEDOS-Hosting-logo.svg";
-import TuchoriceErb from "../assets/Mask group (1).png";
 import "../styles/global.css";
-import Footer from "./Footer.astro";
-import FooterContact from "./FooterContact.astro";
-import Navigation from "./Navigation.astro";
+import BottomPanel from "./BottomPanel.astro";
 import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
 ---
 
-<div class="fixed z-50 t-0 l-0 w-full">
-  <div
-    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
-  >
-    <div class="container grid lg:grid-cols-2">
-      <div
-        class="flex justify-between items-center md:justify-center lg:justify-start"
-      >
-        <div class="flex flex-row gap-4">
-          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
-          <h1
-            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-          >
-            Hasiči Tuchořice
-            <small class="text-gray-800 text-sm font-medium"
-              >Pohotovostní služba</small
-            >
-          </h1>
-        </div>
-
-        <div class="md:hidden sm:block">
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
-          >
-            <MenuIcon
-              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
-            />
-            <CloseIcon
-              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
-            />
-          </button>
-        </div>
-      </div>
-
-      <Navigation />
-    </div>
-  </div>
-</div>
-
+<TopPanel />
 <PageHeader imgSrc={Bg3Img.src} title="Sponzoři, dárci, partneři" />
 
 <div
@@ -139,8 +95,4 @@ import PageHeader from "./PageHeader.astro";
   />
 </div>
 
-<!-- Footer -->
-<div class="relative overflow-hidden">
-  <FooterContact />
-  <Footer />
-</div>
+<BottomPanel />

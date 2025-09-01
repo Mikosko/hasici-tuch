@@ -4,4 +4,6 @@
 
 @theme {
   --font-sans: "Montserrat", sans-serif;
+
+  --text-brand: 1.075rem;
 }

@@ -5,63 +5,20 @@ import HandShakeIcon from "../assets/agreement-02-stroke-rounded.svg";
 import ArrowIcon from "../assets/arrow-down-double-stroke-rounded.svg";
 import BookIcon from "../assets/book-02-stroke-rounded.svg";
 import BulbIcon from "../assets/bulb-stroke-rounded.svg";
-import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
 import FireIcon from "../assets/fire-stroke-rounded.svg";
 import PlaceholderIcon from "../assets/image-02-stroke-rounded.svg";
 import LogoImg from "../assets/logo-no-text.png";
-import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
 import "../styles/global.css";
-import Footer from "./Footer.astro";
-import FooterContact from "./FooterContact.astro";
-import Navigation from "./Navigation.astro";
+import BottomPanel from "./BottomPanel.astro";
+import TopPanel from "./TopPanel.astro";
 ---
 
-<div class="fixed z-50 t-0 l-0 w-full">
-  <div
-    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
-  >
-    <div class="container grid lg:grid-cols-2">
-      <div
-        class="flex justify-between items-center md:justify-center lg:justify-start"
-      >
-        <div class="flex flex-row gap-4">
-          <img src={LogoImg.src} class="w-20 aspect-square object-scale-down" />
-          <h1
-            class="flex flex-col justify-center text-red-800 font-bold text-3xl"
-          >
-            Hasiči Tuchořice
-            <small class="text-gray-800 text-sm font-medium"
-              >Pohotovostní služba</small
-            >
-          </h1>
-        </div>
-
-        <div class="md:hidden sm:block">
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
-          >
-            <MenuIcon
-              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
-            />
-            <CloseIcon
-              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
-            />
-          </button>
-        </div>
-      </div>
-
-      <Navigation />
-    </div>
-  </div>
-</div>
-
+<TopPanel />
 <div class="w-full min-h-screen relative">
   <img class="object-cover h-full w-full absolute" src={Bg3Img.src} />
   <div class="h-full w-full absolute bg-black/50"></div>
   <div
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center"
+    class="relative z-10 py-30 w-full flex flex-col items-center"
   >
     <div
       class="container mx-auto max-w-250 text-center items-center justify-center flex flex-col"
@@ -206,7 +163,7 @@ import Navigation from "./Navigation.astro";
   />
 </div>
 <!-- A -->
-<div
+<!-- <div
   class="w-full px-4 py-20 flex items-center flex-col relative border-t border-gray-200"
 >
   <div class="container">
@@ -251,10 +208,6 @@ import Navigation from "./Navigation.astro";
       }
     </div>
   </div>
-</div>
+</div> -->
 
-<!-- Footer -->
-<div class="relative overflow-hidden">
-  <FooterContact />
-  <Footer />
-</div>
+<BottomPanel />

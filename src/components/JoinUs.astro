@@ -1,0 +1,91 @@
+---
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+import Bg3Img from "../assets/image 4.jpg";
+import "../styles/global.css";
+import BottomPanel from "./BottomPanel.astro";
+import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
+---
+
+<TopPanel />
+<PageHeader imgSrc={Bg3Img.src} title="Přidej se k nám!" />
+
+<div
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+    <section class="max-w-4xl mx-auto px-4 space-y-10">
+      <!-- Úvod -->
+      <p class="mb-6 text-lg font-medium text-gray-800">
+        Chceš se stát součástí týmu, který chrání životy, majetek a zároveň
+        udržuje tradice dobrovolného hasičství v Tuchořicích?
+      </p>
+
+      <!-- Co nabízíme -->
+      <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+        <h3
+          class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+        >
+          Co ti můžeme nabídnout
+        </h3>
+        <ul
+          class="text-gray-800 list-disc list-inside space-y-1 text-brand font-medium"
+        >
+          <li>Smysluplnou činnost s reálným dopadem</li>
+          <li>Odborný výcvik a školení zdarma</li>
+          <li>Moderní techniku a kvalitní zázemí</li>
+          <li>Přátelský kolektiv a společenské akce</li>
+        </ul>
+      </div>
+
+      <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+        <h3
+          class="text-red-800 text-2xl font-bold flex items-center gap-3 mb-2"
+        >
+          Jak se přidat?
+        </h3>
+        <p class="text-brand text-gray-800 mb-4">
+          Stačí mít chuť pomáhat a zapojit se do našeho týmu. Nepotřebuješ žádné
+          předchozí zkušenosti – vše tě naučíme!
+        </p>
+        <ul class="text-brand text-gray-800">
+          <li>
+            <strong> Telefon:</strong>
+            <a
+              href="tel:+420 725 700 074"
+              class="text-red-800 font-bold hover:text-red-900 transition-colors"
+              >+420 725 700 074</a
+            >
+          </li>
+          <li>
+            <strong> E-mail:</strong>
+            <a
+              href="mailto:hasicituchorice@post.cz"
+              class="text-red-800 font-bold hover:text-red-900 transition-colors"
+              >hasicituchorice@post.cz</a
+            >
+          </li>
+          <li>
+            <strong> Osobně:</strong>
+            <a
+              target="_blank"
+              href="https://www.google.com/maps/place/Tucho%C5%99ice+30,+439+69+Tucho%C5%99ice/@50.2851914,13.6603224,589m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470a3963ed3bd4c1:0x49d6ec19b7052c62!8m2!3d50.285188!4d13.6628973!16s%2Fg%2F11crtzl_7c?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
+              class="text-red-800 font-bold hover:text-red-900 transition-colors"
+              >Hasičská zbrojnice Tuchořice</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-10"
+    style="
+    object-fit: cover;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+
+<BottomPanel />

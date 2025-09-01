@@ -1,0 +1,37 @@
+---
+import CloseIcon from "../assets/cancel-01-stroke-rounded.svg";
+import MenuIcon from "../assets/menu-01-stroke-rounded.svg";
+import Logo from "./Logo.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<div class="fixed z-50 t-0 l-0 w-full">
+  <div
+    class="bg-white/60 shadow backdrop-blur w-full px-4 py-1 flex items-center flex-col border-b border-black/25"
+  >
+    <div class="container grid lg:grid-cols-2">
+      <div
+        class="flex justify-between items-center md:justify-center lg:justify-start"
+      >
+        <Logo />
+
+        <div class="md:hidden sm:block">
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="cursor-pointer group rounded-xl border border-gray-800 p-2 hover:bg-orange-600 transition-colors hover:border-orange-600"
+          >
+            <MenuIcon
+              class="group-hover:text-white transition-colors text-gray-800 hidden group-[:not(.is-open)]:block"
+            />
+            <CloseIcon
+              class="group-hover:text-white hidden group-[.is-open]:block transition-colors text-gray-800"
+            />
+          </button>
+        </div>
+      </div>
+
+      <Navigation />
+    </div>
+  </div>
+</div>
