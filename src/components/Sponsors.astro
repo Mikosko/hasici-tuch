@@ -8,6 +8,7 @@ import VedosIcon from "../assets/VEDOS-Hosting-logo.svg";
 import "../styles/global.css";
 import BottomPanel from "./BottomPanel.astro";
 import PageHeader from "./PageHeader.astro";
+import SponsorWidget from "./SponsorWidget.astro";
 import TopPanel from "./TopPanel.astro";
 ---
 
@@ -37,24 +38,18 @@ import TopPanel from "./TopPanel.astro";
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
       >
-        <div class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8">
-          <div class="flex items-center w-full h-20 justify-center">
-            <VedosIcon />
-          </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            Vedos.cz nám poskytuje webhosting.<br /> — Děkujeme za spolehlivé technické
-            zázemí pro náš web.
-          </p>
-        </div>
-        <div class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8">
-          <div class="flex items-center w-full h-20 justify-center">
-            <img src={TuchoriceErb.src} class="h-full" />
-          </div>
-          <p class="text-gray-800 text-sm font-semibold mt-6">
-            Tuchorice.cz<br /> — Děkujeme obci Tuchořice za dlouhodobou podporu našeho
-            sboru.
-          </p>
-        </div>
+        <SponsorWidget url="www.vedos.cz">
+          <VedosIcon class="h-full" slot="image" class="h-full" />
+
+          <strong>Vedos.cz</strong><br />
+          — Děkujeme za spolehlivé technické zázemí pro náš web.
+        </SponsorWidget>
+        <SponsorWidget url="www.tuchorice.cz">
+          <img src={TuchoriceErb.src} slot="image" class="h-full" />
+
+          <strong>Tuchorice.cz</strong><br />
+          — Děkujeme obci Tuchořice za dlouhodobou podporu našeho sboru.
+        </SponsorWidget>
         <div class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8">
           <div class="flex items-center w-full h-20 justify-center">
             <FavIcon class="w-20 h-20 text-red-900 fill-red-700" />

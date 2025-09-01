@@ -1,0 +1,17 @@
+---
+const { url } = Astro.props;
+---
+
+<div class="bg-white shadow-sm rounded-xl flex flex-col gap-1 p-8 min-h-70">
+  <div class="flex items-center w-full h-20 justify-center">
+    <slot name="image" />
+  </div>
+  <p class="text-gray-800 text-sm font-semibold mt-6">
+    <slot />
+  </p>
+  <a
+    target="_blank"
+    class="mt-auto text-sm italic text-red-800 font-bold hover:text-red-900 transition-colors"
+    href={`https://${url}`}>{url}</a
+  >
+</div>
