@@ -166,7 +166,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
           <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 relative">
           {[0,1,2,3,4,5,6,7,8,9,10,11].map((m, i)=> (
-            <div class="relative">
+            <div class={"relative p-4 rounded-2xl " + (currentMonthNum === m && "bg-zinc-50")}>
             <div class={currentMonthNum < m ? 'opacity-20' : ''}>
             <div class={'capitalize   text-gray-800 mb-2 ' + (currentMonthNum === m ? 'font-bold' : 'font-light')}>
               {new Date(new Date().setMonth(m)).toLocaleDateString('cs-Cz', {month: 'long'})}
@@ -188,7 +188,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{pocetVyjezdov}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Počet výjezdů</span
+              >Počet výjezdů v roce 2025</span
             >
           </div>
              <div
@@ -196,7 +196,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{pocetNasadenejTechniky}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Počet nasazené techniky</span
+              >Počet nasazené techniky v roce 2025</span
             >
          
       </div>
@@ -234,7 +234,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{EventTypeList[bestType[0]]}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Nejčastější typ zásahu
+              >Nejčastější typ zásahu v roce 2025
               </span
             >
       </div>
@@ -243,7 +243,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{cooperace[0]}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Nejčastější spolupracující jednotka</span
+              >Nejčastější spolupracující jednotka v roce 2025</span
             >
          
       </div>
@@ -270,35 +270,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
                   "-"}
               </small>
             </h5>
-            <div>
-              {Object.entries(subData[udalost.id]).slice(0,1).map(([jednotka, technika]) =>(<div>{technika.map((tech) => (<div>{tech.typ}{tech.pocet === 1 ? '' : ' | ' + tech.pocet + 'x' }</div>))}</div>)) }
-            </div>
-            {/* <hr class="w-10 my-2" />
-              <strong>Popis:</strong>
-            <p class="text-gray-800 text-lg capitalize">
-              {udalost.poznamkaProMedia ?? "-"}
-            </p> */}
-            {Object.entries(subData[udalost.id]).slice(1,-1).length !== 0 && (
-             <hr class="w-10 my-2" />
             
-             <div class="grid grid-cols-3">
-            {Object.entries(subData[udalost.id]).slice(1,-1).map(([jednotka, technika]) => (
-              <div>
-              <strong>{jednotka}</strong>
-
-              <ul class="prose">
-              {technika.map((tech) => (
-                <li class="capitalize">
-
-
-                  {tech.typ}{tech.pocet === 1 ? '' : ' | ' + tech.pocet + 'x' }
-                </li>
-              ))}
-              </ul>
-              </div>
-            ))}
-          </div>
-            )}
             
           </div>
         ))
