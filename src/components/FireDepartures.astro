@@ -1,0 +1,326 @@
+---
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+import Bg3Img from "../assets/image 4.jpg";
+import "../styles/global.css";
+import BottomPanel from "./BottomPanel.astro";
+import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
+import FireIcon from '../assets/events/fire-stroke-rounded.svg'
+import CarIcon from '../assets/events/car-alert-stroke-rounded.svg'
+import BioIcon from '../assets/events/radioactive-alert-stroke-rounded.svg'
+import WrenchIcon from '../assets/events/wrench-01-stroke-rounded.svg'
+import JineIcon from '../assets/events/help-circle-stroke-rounded.svg'
+import ZachranaIcon from '../assets/events/lifebuoy-stroke-rounded.svg'
+import FormalIcon from '../assets/events/file-01-stroke-rounded.svg'
+import TestIcon from '../assets/events/gears-stroke-rounded.svg'
+import FalseIcon from '../assets/events/notification-off-01-stroke-rounded.svg'
+import ObjectIcon from '../assets/events/city-03-stroke-rounded.svg'
+
+const EventTypeList = {
+  3100: "Požár",
+  3200: "Dopravní nehoda",
+  3400: "Únik nebezpečných látek",
+  3500: "Technická pomoc",
+  3550: "Záchrana osob a zvířat",
+  3700: "Jiná událost",
+  3600: "Formálně založená událost",
+  3900: "Technologický test",
+  3800: "Planý poplach",
+  5000: "Událost na objektu"
+} as const; 
+
+enum EventType {
+  POZAR = 3100,
+  DOPRAVNI_NEHODA = 3200,
+  UNIK_NEBEZPECNYCH_LATEK = 3400,
+  TECHNICKA_POMOC = 3500,
+  ZACHRANA_OSOB_A_ZVIRAT = 3550,
+  JINA_UDALOST = 3700,
+  FORMALNE_ZALOZENA_UDALOST = 3600,
+  TECHNOLOGICKY_TEST = 3900,
+  PLANY_POPLACH = 3800,
+  UDALOST_NA_OBJEKT = 5000,
+}
+
+const EventTypes = [3100,3200,3400,3500,3550,3700,3600,3900,3800,5000];
+
+interface Udalost {
+  id: number;
+  casOhlaseni: string;
+  casVzniku: null;
+  stavId: number;
+  typId: number;
+  podtypId: number;
+  poznamkaProMedia: null | string;
+  kraj: Kraj;
+  okres: Kraj;
+  obec: string;
+  castObce: string;
+  ORP: string;
+  ulice: null;
+  gis1: string;
+  gis2: string;
+  zoc: boolean;
+  silnice: null | string;
+}
+
+interface Kraj {
+  id: number;
+  nazev: string;
+}
+
+interface Technika {
+  typ: string;
+  jednotka: string;
+  pocet: number;
+  aktualniPocet: number;
+  casOhlaseni: string;
+}
+
+const data = await fetch(
+  "https://udalosti.hzsulk.cz/api/?casOd=2025-01-01T00:00:00.000Z&casDo=2025-08-31T22:00:00.000Z&krajId=60&jednotkaId=4204242&stavIds=210&stavIds=400&stavIds=410&stavIds=420&stavIds=430&stavIds=440&stavIds=500&stavIds=510&stavIds=520&stavIds=600&stavIds=610&stavIds=620&stavIds=700&stavIds=710&stavIds=750&stavIds=760&stavIds=780&stavIds=800"
+).then((response) => response.json() as Promise<Udalost[]>);
+
+async function fetchTechById(id: number) {
+  return await fetch(
+    `https://udalosti.hzsulk.cz/api/udalosti/${id}/technika`
+  ).then((r) => r.json() as Promise<Technika[]>);
+}
+
+let jednotkyCelkem = {} as {[key:string]: number};
+
+const subData = await data.reduce(
+  async (accPromise, u) => {
+    const acc = await accPromise;
+    const data = await fetchTechById(u.id);
+
+    const merged = data.sort((a,b) => -(a.jednotka === "Tuchořice") - -(b.jednotka === "Tuchořice") || a.jednotka.localeCompare(b.jednotka) ).reduce(
+      (acc, curr) => {
+        const key = curr.jednotka;
+        const newO = acc[key] || [];
+        jednotkyCelkem = {...jednotkyCelkem, [key]: (jednotkyCelkem[key] || 0) + 1}
+        return { ...acc, [key]: [...newO, curr] };
+      },
+      {} as { [key: string]: Technika[] }
+    )
+
+    return { ...acc, [u.id]: merged };
+  },
+  Promise.resolve({} as { [id: string]: { [key: string]: Technika[] } })
+);
+
+const pocetVyjezdov = data.length
+const pocetVyjezdovVMesiaci = data.reduce( (acc, curr) => {
+  const month = new Date(curr.casOhlaseni).toLocaleDateString('cs-Cz', {month: 'long'})
+  const mKey = acc[month] || 0
+  return {...acc, [month]: mKey + 1}
+},{} as { [key: string]: number })
+const pocetVyjezdovVSkupinachEvent = data.reduce((acc,curr) => {
+  const typ = curr.typId
+
+  const mType = acc[typ] || 0;
+
+  return {...acc, [typ]: mType + 1}
+},{} as { [key: string]: number })
+
+
+const bestType = Object.entries(pocetVyjezdovVSkupinachEvent).reduce(([accK, accV],[key, value]) => accV > value ? [accK, accV] : [key, value])
+
+const pocetNasadenejTechniky = Object.values(subData).reduce((acc, curr) => {
+  const tuchTechnika = curr['Tuchořice'];
+  const count = tuchTechnika.reduce((a,c) => a + c.pocet, 0)
+
+  return acc + count
+},0)
+
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const currentMonthNum = new Date().getMonth()
+const cooperace = Object.entries(jednotkyCelkem)[1]
+// https://udalosti.hzsulk.cz/api/udalosti/327245042/technika
+// https://udalosti.hzsulk.cz/api/udalosti/327245042/obrazky
+---
+
+<TopPanel />
+<PageHeader imgSrc={Bg3Img.src} title="Výjezdy" />
+
+<div
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+     <h2 class="text-gray-800 font-bold text-5xl mb-4 md:text-balance"> <span class="text-red-800">2025</span>
+</h2>
+<p class="mb-6 text-lg font-medium text-gray-800 prose">
+  Seznam výjezdů dobrovolných hasičů z Tuchořic. Informace o zásazích jsou automaticky aktualizovány z portálu HZS Ústeckého kraje.
+</p>
+<p class="mb-4 text-lg text-gray-800 prose font-bold">
+  Počet výjezdů za jednotlivé měsíce:
+  </p>
+          <div
+            class="bg-white shadow-sm rounded-xl p-2 text-center flex flex-col gap-1 col-span-2 mb-6"
+          >
+          <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 relative">
+          {[0,1,2,3,4,5,6,7,8,9,10,11].map((m, i)=> (
+            <div class="relative">
+            <div class={currentMonthNum < m ? 'opacity-20' : ''}>
+            <div class={'capitalize   text-gray-800 mb-2 ' + (currentMonthNum === m ? 'font-bold' : 'font-light')}>
+              {new Date(new Date().setMonth(m)).toLocaleDateString('cs-Cz', {month: 'long'})}
+            </div>
+            <strong class={currentMonthNum < m ? 'text-zinc-400 text-3xl' : 'text-red-800 text-3xl' }>
+              {pocetVyjezdovVMesiaci[new Date(new Date().setMonth(m)).toLocaleDateString('cs-Cz', {month: 'long'})] || 0}</strong>
+            </div>
+            </div>
+          ))}
+          </div>
+          </div>
+<p class="mb-4 text-lg text-gray-800 prose font-bold">
+  Statistika:
+  </p>
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        
+       <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1 justify-center"
+          >
+            <strong class="text-red-800 text-3xl">{pocetVyjezdov}</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Počet výjezdů</span
+            >
+          </div>
+             <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1 justify-center"
+          >
+            <strong class="text-red-800 text-3xl">{pocetNasadenejTechniky}</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Počet nasazené techniky</span
+            >
+         
+      </div>
+       <div
+            class="bg-white shadow-sm rounded-xl p-4  flex flex-col gap-1 col-span-2   row-span-2 justify-center"
+          >
+          <div class="grid grid-cols-2 md:grid-cols-5 h-full items-start gap-4">
+            {EventTypes.map((t) => (
+              <div class="flex justify-between flex-col gap-2 group relative items-center h-full bg-zinc-50 rounded-2xl p-4 ">
+              <div class="flex items-center flex-col gap-3"><span>
+                {t ===EventType.POZAR && <FireIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.DOPRAVNI_NEHODA && <CarIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.UNIK_NEBEZPECNYCH_LATEK && <BioIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.TECHNICKA_POMOC && <WrenchIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.ZACHRANA_OSOB_A_ZVIRAT && <ZachranaIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.JINA_UDALOST && <JineIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.PLANY_POPLACH && <FalseIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.TECHNOLOGICKY_TEST && <TestIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.UDALOST_NA_OBJEKT && <ObjectIcon class="text-gray-800 w-8 h-8"/> }
+                {t ===EventType.FORMALNE_ZALOZENA_UDALOST && <FormalIcon class="text-gray-800 w-8 h-8"/> }
+                </span>
+                {/* group-hover:flex hidden absolute bottom-full whitespace-nowrap left-1/2 -translate-x-1/2 */}
+
+                <strong class="text-red-800 text-3xl">{pocetVyjezdovVSkupinachEvent[t] || 0}</strong>
+                </div>
+                <span class="text-xs">{EventTypeList[t]} </span>
+
+              </div>
+            ))}
+          </div>
+          </div>
+
+          <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1 justify-center"
+          >
+            <strong class="text-red-800 text-3xl">{EventTypeList[bestType[0]]}</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Nejčastější typ zásahu
+              </span
+            >
+      </div>
+      <div
+            class="bg-white shadow-sm rounded-xl p-8 text-center flex flex-col gap-1 h-full justify-center"
+          >
+            <strong class="text-red-800 text-3xl">{cooperace[0]}</strong>
+            <span class="text-gray-800 text-sm font-semibold"
+              >Nejčastější spolupracující jednotka</span
+            >
+         
+      </div>
+       </div>
+       
+       
+  <p class="mb-4 text-lg text-gray-800 prose font-bold">
+  Seznam výjezdů:
+  </p>
+    <section class="space-y-4">
+     
+      {
+        data.map((udalost) => (
+          <div class="bg-white shadow-sm rounded-xl py-6 p-8 flex flex-col gap-1">
+            <h5 class="text-red-800 text-2xl font-bold flex flex-col">
+              {EventTypeList[udalost.typId]}: {udalost.obec} {udalost.castObce === udalost.obec ? '' : ' - ' + udalost.castObce}
+              <small class="text-gray-800 text-sm">
+                {new Date(udalost.casOhlaseni).toLocaleDateString(
+                  "cs-Cz",
+                  dateOptions
+                ) ?? "-"}{" "}
+                -{" "}
+                {new Date(udalost.casOhlaseni).toLocaleTimeString("cs-Cz") ??
+                  "-"}
+              </small>
+            </h5>
+            <div>
+              {Object.entries(subData[udalost.id]).slice(0,1).map(([jednotka, technika]) =>(<div>{technika.map((tech) => (<div>{tech.typ}{tech.pocet === 1 ? '' : ' | ' + tech.pocet + 'x' }</div>))}</div>)) }
+            </div>
+            {/* <hr class="w-10 my-2" />
+              <strong>Popis:</strong>
+            <p class="text-gray-800 text-lg capitalize">
+              {udalost.poznamkaProMedia ?? "-"}
+            </p> */}
+            {Object.entries(subData[udalost.id]).slice(1,-1).length !== 0 && (
+             <hr class="w-10 my-2" />
+            
+             <div class="grid grid-cols-3">
+            {Object.entries(subData[udalost.id]).slice(1,-1).map(([jednotka, technika]) => (
+              <div>
+              <strong>{jednotka}</strong>
+
+              <ul class="prose">
+              {technika.map((tech) => (
+                <li class="capitalize">
+
+
+                  {tech.typ}{tech.pocet === 1 ? '' : ' | ' + tech.pocet + 'x' }
+                </li>
+              ))}
+              </ul>
+              </div>
+            ))}
+          </div>
+            )}
+            
+          </div>
+        ))
+      }
+
+       <div class="mt-15 grid grid-cols-1 gap-8 md:grid-cols-3 prose">
+      <p class="text-balance col-span-2 md:col-span-3 text-sm">
+        <strong class="uppercase">Informace o výjezdech</strong><br /> Data o zásazích jsou automaticky přebírána z oficiálního portálu <a href="https://udalosti.hzsulk.cz/">udalosti.hzsulk.cz</a>
+.<br/>
+Informace se průběžně aktualizují a odpovídají záznamům Hasičského záchranného sboru Ústeckého kraje.
+      </p>
+    </div>
+    </section>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-10"
+    style="
+    object-fit: cover;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+
+<BottomPanel />

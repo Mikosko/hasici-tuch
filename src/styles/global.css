@@ -7,3 +7,50 @@
 
   --text-brand: 1.075rem;
 }
+
+activity-graph.serializd {
+  --size: 20px;
+  color: var(--color-gray-800);
+  display: inline-grid;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  gap: 1px;
+  padding: 1em;
+}
+
+activity-graph.serializd::part(weekday-header),
+activity-graph.serializd::part(month-header) {
+  font-size: 12px;
+}
+
+activity-graph.serializd::part(weekday-header),
+activity-graph.serializd::part(day) {
+  height: var(--size);
+  line-height: var(--size);
+}
+
+activity-graph.serializd::part(weekday-header) {
+  padding-right: 5px;
+}
+
+activity-graph.serializd::part(day) {
+  background-color: var(--color-zinc-50);
+  width: var(--size);
+  border-radius: 3px;
+}
+
+activity-graph.serializd::part(day--data-1) {
+  background-color: var(--color-red-300);
+}
+
+activity-graph.serializd::part(day--data-2) {
+  background-color: var(--color-red-400);
+}
+
+activity-graph.serializd::part(day--data-3) {
+  background-color: var(--color-red-500);
+}
+
+activity-graph.serializd::part(day--data-4) {
+  background-color: var(--color-red-600);
+}
