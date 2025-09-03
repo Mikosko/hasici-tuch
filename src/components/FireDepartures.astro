@@ -1,6 +1,6 @@
 ---
 import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
-import Bg3Img from "../assets/image 4.jpg";
+import Bg3Img from "../assets/514352750_1144497627723961_4394538453985172254_n.jpg";
 import "../styles/global.css";
 import BottomPanel from "./BottomPanel.astro";
 import PageHeader from "./PageHeader.astro";
@@ -77,8 +77,10 @@ interface Technika {
   casOhlaseni: string;
 }
 
+const {year} = Astro.props
+
 const data = await fetch(
-  "https://udalosti.hzsulk.cz/api/?casOd=2025-01-01T00:00:00.000Z&casDo=2025-08-31T22:00:00.000Z&krajId=60&jednotkaId=4204242&stavIds=210&stavIds=400&stavIds=410&stavIds=420&stavIds=430&stavIds=440&stavIds=500&stavIds=510&stavIds=520&stavIds=600&stavIds=610&stavIds=620&stavIds=700&stavIds=710&stavIds=750&stavIds=760&stavIds=780&stavIds=800"
+  `https://udalosti.hzsulk.cz/api/?casOd=${year}-01-01T00:00:00.000Z&casDo=${year}-08-31T22:00:00.000Z&krajId=60&jednotkaId=4204242&stavIds=210&stavIds=400&stavIds=410&stavIds=420&stavIds=430&stavIds=440&stavIds=500&stavIds=510&stavIds=520&stavIds=600&stavIds=610&stavIds=620&stavIds=700&stavIds=710&stavIds=750&stavIds=760&stavIds=780&stavIds=800`
 ).then((response) => response.json() as Promise<Udalost[]>);
 
 async function fetchTechById(id: number) {
@@ -140,21 +142,35 @@ const dateOptions: Intl.DateTimeFormatOptions = {
   day: "numeric",
 };
 
+const currentYear = new Date().getFullYear()
+
 const currentMonthNum = new Date().getMonth()
 const cooperace = Object.entries(jednotkyCelkem)[1]
+
+
+const { pathname } = Astro.url;
 // https://udalosti.hzsulk.cz/api/udalosti/327245042/technika
 // https://udalosti.hzsulk.cz/api/udalosti/327245042/obrazky
 ---
 
 <TopPanel />
 <PageHeader imgSrc={Bg3Img.src} title="Výjezdy" />
-
+<!-- {pathname.includes("vyjezdy") ? "page" : "false"} -->
 <div
   class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
 >
   <div class="container">
-     <h2 class="text-gray-800 font-bold text-5xl mb-4 md:text-balance"> <span class="text-red-800">2025</span>
+    <div class="flex flex-row gap-6 items-end mb-4">
+    <h2 class={pathname.includes("2024") ? "font-bold text-5xl text-red-800" : "text-3xl text-gray-400"}>
+      <a href="/vyjezdy/2024">2024</a>
+    </h2>
+     <h2 class={!pathname.includes("2024") ? "font-bold text-5xl text-red-800" : "text-3xl text-gray-400"}> 
+      <a href="/vyjezdy">2025</a>
 </h2>
+</div>
+
+
+
 <p class="mb-6 text-lg font-medium text-gray-800 prose">
   Seznam výjezdů dobrovolných hasičů z Tuchořic. Informace o zásazích jsou automaticky aktualizovány z portálu HZS Ústeckého kraje.
 </p>
@@ -166,12 +182,12 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
           <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 relative">
           {[0,1,2,3,4,5,6,7,8,9,10,11].map((m, i)=> (
-            <div class={"relative p-4 rounded-2xl " + (currentMonthNum === m && "bg-zinc-50")}>
-            <div class={currentMonthNum < m ? 'opacity-20' : ''}>
-            <div class={'capitalize   text-gray-800 mb-2 ' + (currentMonthNum === m ? 'font-bold' : 'font-light')}>
+            <div class={"relative p-4 rounded-2xl " + ((currentMonthNum === m && currentYear == year) && "bg-zinc-50")}>
+            <div class={currentMonthNum < m && currentYear == year ? 'opacity-20' : ''}>
+            <div class={'capitalize   text-gray-800 mb-2 ' + (currentMonthNum === m && currentYear == year ? 'font-bold' : 'font-light')}>
               {new Date(new Date().setMonth(m)).toLocaleDateString('cs-Cz', {month: 'long'})}
             </div>
-            <strong class={currentMonthNum < m ? 'text-zinc-400 text-3xl' : 'text-red-800 text-3xl' }>
+            <strong class={currentMonthNum < m && currentYear == year ? 'text-zinc-400 text-3xl' : 'text-red-800 text-3xl' }>
               {pocetVyjezdovVMesiaci[new Date(new Date().setMonth(m)).toLocaleDateString('cs-Cz', {month: 'long'})] || 0}</strong>
             </div>
             </div>
@@ -188,7 +204,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{pocetVyjezdov}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Počet výjezdů v roce 2025</span
+              >Počet výjezdů v roce {year}</span
             >
           </div>
              <div
@@ -196,7 +212,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{pocetNasadenejTechniky}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Počet nasazené techniky v roce 2025</span
+              >Počet nasazené techniky v roce {year}</span
             >
          
       </div>
@@ -234,7 +250,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{EventTypeList[bestType[0]]}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Nejčastější typ zásahu v roce 2025
+              >Nejčastější typ zásahu v roce {year}
               </span
             >
       </div>
@@ -243,7 +259,7 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
           >
             <strong class="text-red-800 text-3xl">{cooperace[0]}</strong>
             <span class="text-gray-800 text-sm font-semibold"
-              >Nejčastější spolupracující jednotka v roce 2025</span
+              >Nejčastější spolupracující jednotka v roce {year}</span
             >
          
       </div>
@@ -271,7 +287,36 @@ const cooperace = Object.entries(jednotkyCelkem)[1]
               </small>
             </h5>
             
+            <div class="flex gap-6">
+              {Object.entries(subData[udalost.id]).slice(0,1).map(([jednotka, technika]) =>(<div class="">{technika.map((tech) => (<div class="capitalize">{tech.typ}{tech.pocet === 1 ? '' : ' | ' + tech.pocet + 'x' }</div>))}</div>)) }
+            </div>
+            {/* <hr class="w-10 my-2" />
+              <strong>Popis:</strong>
+            <p class="text-gray-800 text-lg capitalize">
+              {udalost.poznamkaProMedia ?? "-"}
+            </p> */}
+            {Object.entries(subData[udalost.id]).slice(1,-1).length !== 0 && (
+             <hr class="w-10 my-2" />
             
+             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {Object.entries(subData[udalost.id]).slice(1,-1).map(([jednotka, technika]) => (
+              <div>
+              <strong>{jednotka}</strong>
+
+              <ul class="">
+              {technika.map((tech) => (
+                <li class="capitalize">
+
+
+                  — {tech.typ}{tech.pocet <= 1 ? '' : ' | ' + tech.pocet + 'x' }
+                </li>
+              ))}
+              </ul>
+              </div>
+            ))}
+          </div>
+            )}
+
           </div>
         ))
       }

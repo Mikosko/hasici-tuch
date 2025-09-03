@@ -20,7 +20,7 @@ const { pathname } = Astro.url;
     <li class="p-0 m-0">
       <a
         href="/o-nas"
-        aria-current={pathname.slice(1) === "o-nas" ? "page" : "false"}
+        aria-current={pathname.includes("o-nas") ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
         >O nás</a
       >
@@ -36,7 +36,7 @@ const { pathname } = Astro.url;
     <li class="p-0 m-0">
       <a
         href="/nase-historie"
-        aria-current={pathname.slice(1) === "nase-historie" ? "page" : "false"}
+        aria-current={pathname.includes("nase-historie") ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
         >Historie</a
       >
@@ -44,7 +44,7 @@ const { pathname } = Astro.url;
     <li class="p-0 m-0">
       <a
         href="/technika"
-        aria-current={pathname.slice(1) === "technika" ? "page" : "false"}
+        aria-current={pathname.includes("technika") ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
         >Technika</a
       >
@@ -52,7 +52,7 @@ const { pathname } = Astro.url;
     <li class="p-0 m-0">
       <a
         href="/vyjezdy"
-        aria-current={pathname.slice(1) === "vyjezdy" ? "page" : "false"}
+        aria-current={pathname.includes("vyjezdy") ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold hover:text-orange-600 aria-[current='page']:text-orange-600 transition-colors group"
         >Výjezdy</a
       >
@@ -60,6 +60,7 @@ const { pathname } = Astro.url;
     <li class="p-0 m-0">
       <a
         href="/ohlaseni-paleni"
+        aria-current={pathname.includes("ohlaseni-paleni") ? "page" : "false"}
         class="cursor-pointer text-nowrap font-semibold text-white transition-colors group bg-orange-600 hover:bg-orange-700 px-6 py-2 rounded-2xl"
         >Ohlásit pálení</a
       >
