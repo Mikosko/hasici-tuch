@@ -1,0 +1,65 @@
+---
+import Bg2Img from "../assets/2acce189f87911a8c87dfd2d901ee667.jpg";
+import Bg3Img from "../assets/image 4.jpg";
+import "../styles/global.css";
+import BottomPanel from "./BottomPanel.astro";
+import PageHeader from "./PageHeader.astro";
+import TopPanel from "./TopPanel.astro";
+---
+
+<TopPanel />
+<PageHeader imgSrc={Bg3Img.src} title="O nás" />
+
+<div
+  class="w-full bg-gray-100 px-4 py-20 pt-10 flex items-center relative flex-col border-t border-black/50"
+>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Meno</th>
+          <th>Pozícia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Libor Richter</td><td>velitel jednotky</td></tr>
+        <tr><td>Milan Janza</td><td>zástupce velitele jednotky</td></tr>
+        <tr><td>Pavel Beránek</td><td>st. velitel družstva</td></tr>
+        <tr><td>Petr Hrdlička</td><td>velitel družstva</td></tr>
+        <tr><td>Pavel Beránek ml.</td><td></td></tr>
+        <tr><td>Václav Pavlas</td><td></td></tr>
+        <tr><td>Václav Pilař</td><td></td></tr>
+        <tr><td>Martin Šindelář</td><td></td></tr>
+        <tr><td>Jaroslav Šůma</td><td>starosta sboru</td></tr>
+        <tr><td>Michal Varga</td><td></td></tr>
+        <tr><td>Vlastimil Andrt</td><td></td></tr>
+        <tr><td>Jiří Daněk</td><td></td></tr>
+        <tr><td>Michal Halgaš</td><td></td></tr>
+        <tr><td>Václav Hloušek</td><td></td></tr>
+        <tr><td>Miroslav Jedlička</td><td></td></tr>
+        <tr><td>Pavel Kašík</td><td></td></tr>
+        <tr><td>Pavel Maule</td><td></td></tr>
+        <tr><td>Roman Nový</td><td></td></tr>
+        <tr><td>Michal Ondrůj</td><td></td></tr>
+        <tr><td>Michal Pavlas</td><td></td></tr>
+        <tr><td>Jakub Pexa</td><td></td></tr>
+        <tr><td>Roman Rendl</td><td></td></tr>
+        <tr><td>Antonín Schöner</td><td></td></tr>
+        <tr><td>Jaroslav Štieber</td><td></td></tr>
+        <tr><td>Stanislav Štieber</td><td></td></tr>
+        <tr><td>Radko Tabulka</td><td></td></tr>
+        <tr><td>Lukáš Uhlík</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <img
+    src={Bg2Img.src}
+    class="select-none absolute pointer-events-none left-0 bottom-0 top-0 h-full opacity-20"
+    style="
+    object-fit: cover;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    "
+  />
+</div>
+
+<BottomPanel />

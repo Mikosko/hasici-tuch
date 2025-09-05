@@ -80,7 +80,7 @@ interface Technika {
 const {year} = Astro.props
 
 const data = await fetch(
-  `https://udalosti.hzsulk.cz/api/?casOd=${year}-01-01T00:00:00.000Z&casDo=${year}-08-31T22:00:00.000Z&krajId=60&jednotkaId=4204242&stavIds=210&stavIds=400&stavIds=410&stavIds=420&stavIds=430&stavIds=440&stavIds=500&stavIds=510&stavIds=520&stavIds=600&stavIds=610&stavIds=620&stavIds=700&stavIds=710&stavIds=750&stavIds=760&stavIds=780&stavIds=800`
+  `https://udalosti.hzsulk.cz/api/?casOd=${year-1}-12-31T23:59:59.000Z&casDo=${year}-12-31T23:59:59.000Z&krajId=60&jednotkaId=4204242&stavIds=210&stavIds=400&stavIds=410&stavIds=420&stavIds=430&stavIds=440&stavIds=500&stavIds=510&stavIds=520&stavIds=600&stavIds=610&stavIds=620&stavIds=700&stavIds=710&stavIds=750&stavIds=760&stavIds=780&stavIds=800`
 ).then((response) => response.json() as Promise<Udalost[]>);
 
 async function fetchTechById(id: number) {
@@ -129,7 +129,7 @@ const pocetVyjezdovVSkupinachEvent = data.reduce((acc,curr) => {
 const bestType = Object.entries(pocetVyjezdovVSkupinachEvent).reduce(([accK, accV],[key, value]) => accV > value ? [accK, accV] : [key, value])
 
 const pocetNasadenejTechniky = Object.values(subData).reduce((acc, curr) => {
-  const tuchTechnika = curr['Tuchořice'];
+  const tuchTechnika = curr['Tuchořice']  || [];
   const count = tuchTechnika.reduce((a,c) => a + c.pocet, 0)
 
   return acc + count
